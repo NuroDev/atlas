@@ -1,18 +1,10 @@
 language: rust
-sudo: false
+
+rust:
+  - stable
+  - nightly
 
 matrix:
-  include:
-    - rust: stable
-      script:
-      - rustup component add rustfmt-preview --toolchain nightly
-      - cargo +nightly fmt --all -- --check
-
-    - rust: nightly
-      script:
-      - rustup component add rustfmt-preview
-      - cargo fmt --all -- --check
-
   allow_failures:
     - rust: nightly
   fast_finish: true
