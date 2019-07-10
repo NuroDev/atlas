@@ -7,7 +7,5 @@ fn main() {
 
     info!("Initializing Sandbox...");
 
-    core::log();
-    physics::log();
-    renderer::log();
+    core::init();
 }

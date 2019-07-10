@@ -1,7 +1,6 @@
 #[macro_use]
 extern crate log;
-extern crate env_logger;
 
-pub fn log() {
+pub fn init() {
     info!("Initializing Renderer...");
 }

@@ -12,5 +12,3 @@ path = "src/main.rs"
 core = { path = "../core" }
 env_logger = "0.6.2"
 log = "0.4.6"
-physics = { path = "../physics" }
-renderer = { path = "../renderer" }
