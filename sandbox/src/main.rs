@@ -3,9 +3,9 @@ extern crate log;
 extern crate env_logger;
 
 fn main() {
-    env_logger::init();
+	env_logger::init();
 
-    info!("Initializing Sandbox...");
+	info!("Initializing Sandbox...");
 
-    core::init();
+	core::init();
 }

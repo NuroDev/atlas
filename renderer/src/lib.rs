@@ -2,5 +2,5 @@
 extern crate log;
 
 pub fn init() {
-    info!("Initializing Renderer...");
+	info!("Initializing Renderer...");
 }

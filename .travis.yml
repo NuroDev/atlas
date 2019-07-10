@@ -12,4 +12,5 @@ matrix:
 cache: cargo
 
 script:
+  - cargo fmt --all -- --check
   - cargo build --verbose
