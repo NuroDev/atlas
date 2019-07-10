@@ -7,5 +7,5 @@ fn main() {
 
 	info!("Initializing Sandbox...");
 
-	core::init();
+	atlas::init();
 }

@@ -8,9 +8,6 @@ use winit::{event::{Event, WindowEvent},
 pub fn init() {
 	info!("Initializing Core...");
 
-	physics::init();
-	renderer::init();
-
 	let event_loop = EventLoop::new();
 	let window = WindowBuilder::new()
 		.with_title("Atlas")

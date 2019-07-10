@@ -1,7 +1,5 @@
 [workspace]
 members = [
-  "core",
-  "physics",
-  "renderer",
+  "atlas",
   "sandbox",
 ]
