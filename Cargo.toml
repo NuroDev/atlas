@@ -1,0 +1,7 @@
+[workspace]
+members = [
+  "core",
+  "physics",
+  "renderer",
+  "sandbox",
+]
