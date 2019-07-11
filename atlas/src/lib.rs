@@ -11,9 +11,10 @@ extern crate gfx_backend_metal as backend;
 extern crate gfx_backend_vulkan as backend;
 extern crate gfx_hal as hal;
 
-mod error;
+pub mod error;
 mod event;
 
+use error::AtlasError;
 use event::Instance as EventInstance;
 
 pub struct Atlas {
@@ -45,8 +46,10 @@ impl Atlas {
 		self
 	}
 
-	pub fn start (&self) {
+	pub fn start (&self) -> Result<(), AtlasError>{
 		info!("Initializing Atlas...");
-		self.event.start()
+		self.event.start();
+		
+		Ok(())
 	}
 }

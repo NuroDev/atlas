@@ -3,6 +3,7 @@ extern crate log;
 extern crate env_logger;
 
 use atlas::Atlas;
+use std::process::exit;
 
 fn main() {
 	env_logger::init();
@@ -10,6 +11,12 @@ fn main() {
 	info!("Initializing Sandbox...");
 
 	let sandbox = Atlas::new();
-	
-	sandbox.start();
+
+	match sandbox.start() {
+		Ok(_) => exit(0),
+		Err(e) => {
+			println!("Error: {:?}", e);
+			exit(1);
+		}
+	}
 }
