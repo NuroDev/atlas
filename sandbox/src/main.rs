@@ -7,5 +7,5 @@ fn main() {
 
 	info!("Initializing Sandbox...");
 
-	atlas::init();
+	atlas::init("Sandbox".to_owned());
 }

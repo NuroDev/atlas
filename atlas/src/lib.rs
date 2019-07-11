@@ -13,12 +13,12 @@ use winit::{event::{Event, WindowEvent},
             event_loop::{ControlFlow, EventLoop},
             window::WindowBuilder};
 
-pub fn init() {
+pub fn init(title: String) {
 	info!("Initializing Core...");
 
 	let event_loop = EventLoop::new();
 	let window = WindowBuilder::new()
-		.with_title("Atlas")
+		.with_title(title)
 		.build(&event_loop)
 		.expect("Failed to unwrap window builder");
 
