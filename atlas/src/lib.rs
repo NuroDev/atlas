@@ -1,6 +1,14 @@
 #[macro_use]
 extern crate log;
 
+#[cfg(windows)]
+extern crate gfx_backend_dx12 as backend;
+#[cfg(macos)]
+extern crate gfx_backend_metal as backend;
+#[cfg(all(unix, not(target_os = "macos")))]
+extern crate gfx_backend_vulkan as backend;
+extern crate gfx_hal as hal;
+
 use winit::{event::{Event, WindowEvent},
             event_loop::{ControlFlow, EventLoop},
             window::WindowBuilder};
