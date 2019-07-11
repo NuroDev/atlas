@@ -5,21 +5,19 @@ authors = ["N U R O ™ <me@nuro.sh>"]
 edition = "2018"
 
 [dependencies]
-conrod_core = "0.66.0"
-conrod_gfx = "0.66.0"
-conrod_winit = "0.66.0"
 env_logger = "0.6.2"
 ezing = "0.2.1"
 gfx-hal = "0.2.1"
 glam = "0.7.1"
 ncollide3d = "0.19.2"
 noise = "0.5.1"
-obj-rs = "0.5.0"
 log = "0.4.6"
 resource = "0.2.1"
 rodio = "0.9.0"
 specs = "0.15.0"
+tobj = "0.1.7"
 winit = "0.20.0-alpha2"
+imgui-rs = "1.47.0"
 
 [target.'cfg(windows)'.dependencies.gfx-backend-dx12]
 version = "0.2.1"
