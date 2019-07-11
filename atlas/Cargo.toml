@@ -22,7 +22,7 @@ imgui-rs = "1.47.0"
 [target.'cfg(windows)'.dependencies.gfx-backend-dx12]
 version = "0.2.1"
 
-[target.'cfg(target_os = "macos")'.dependencies.gfx-backend-metal]
+[target.'cfg(macos)'.dependencies.gfx-backend-metal]
 version = "0.2.1"
 
 [target.'cfg(all(unix, not(target_os = "macos")))'.dependencies.gfx-backend-vulkan]
