@@ -2,10 +2,14 @@
 extern crate log;
 extern crate env_logger;
 
+use atlas::Atlas;
+
 fn main() {
 	env_logger::init();
 
 	info!("Initializing Sandbox...");
 
-	atlas::init((1024, 768), "Sandbox".to_owned());
+	let sandbox = Atlas::new();
+	
+	sandbox.start();
 }
