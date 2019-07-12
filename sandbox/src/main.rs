@@ -17,6 +17,6 @@ fn main() {
 		Err(e) => {
 			println!("Error: {:?}", e);
 			exit(1);
-		}
+		},
 	}
 }

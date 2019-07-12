@@ -26,30 +26,28 @@ impl Default for Atlas {
 	fn default() -> Atlas {
 		Atlas {
 			name: "Atlas".to_owned(),
-			event: EventInstance::new()
+			event: EventInstance::new(),
 		}
 	}
 }
 
 impl Atlas {
-	pub fn new () -> Self {
-		Self::default()
-	}
+	pub fn new() -> Self { Self::default() }
 
-	pub fn name (mut self, name: String) -> Atlas {
+	pub fn name(mut self, name: String) -> Atlas {
 		self.name = name;
 		self
 	}
 
-	pub fn event (mut self, event: EventInstance) -> Atlas {
+	pub fn event(mut self, event: EventInstance) -> Atlas {
 		self.event = event;
 		self
 	}
 
-	pub fn start (&self) -> Result<(), AtlasError>{
+	pub fn start(&self) -> Result<(), AtlasError> {
 		info!("Initializing Atlas...");
 		self.event.start();
-		
+
 		Ok(())
 	}
 }
