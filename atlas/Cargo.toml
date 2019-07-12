@@ -5,10 +5,10 @@ authors = ["N U R O ™ <me@nuro.sh>"]
 edition = "2018"
 
 [dependencies]
+cgmath = "0.17.0"
 env_logger = "0.6.2"
 ezing = "0.2.1"
 gfx-hal = "0.2.1"
-glam = "0.7.1"
 ncollide3d = "0.19.2"
 noise = "0.5.1"
 log = "0.4.6"
