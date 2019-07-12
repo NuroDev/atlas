@@ -19,9 +19,19 @@ $ git clone https://github.com/nurodev/atlas.git
 $ cd atlas/
 ```
 
+Build:
+```shell
+cargo build --release
+```
+
+Test:
+```shell
+cargo test
+```
+
 Run:
 ```shell
-cargo run --release
+cargo run --release --example sandbox
 ```
 
 ## License
