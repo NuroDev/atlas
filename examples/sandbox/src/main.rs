@@ -2,7 +2,7 @@
 extern crate log;
 extern crate env_logger;
 
-use atlas::Atlas;
+use atlas::event::Instance as EventInstance;
 use std::process::exit;
 
 fn main() {
@@ -10,9 +10,11 @@ fn main() {
 
 	info!("Initializing Sandbox...");
 
-	let sandbox = Atlas::new();
+	let event = EventInstance::new()
+		.title("Sandbox".to_owned())
+		.resolution(1024, 768);
 
-	match sandbox.start() {
+	match event.start() {
 		Ok(_) => exit(0),
 		Err(e) => {
 			println!("Error: {:?}", e);

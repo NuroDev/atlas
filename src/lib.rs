@@ -1,3 +1,6 @@
+#![crate_name = "atlas"]
+#![warn(dead_code)]
+
 #[macro_use]
 extern crate log;
 #[macro_use]
@@ -12,42 +15,4 @@ extern crate gfx_backend_vulkan as backend;
 extern crate gfx_hal as hal;
 
 pub mod error;
-mod event;
-
-use error::AtlasError;
-use event::Instance as EventInstance;
-
-pub struct Atlas {
-	pub name: String,
-	pub event: EventInstance,
-}
-
-impl Default for Atlas {
-	fn default() -> Atlas {
-		Atlas {
-			name: "Atlas".to_owned(),
-			event: EventInstance::new(),
-		}
-	}
-}
-
-impl Atlas {
-	pub fn new() -> Self { Self::default() }
-
-	pub fn name(mut self, name: String) -> Atlas {
-		self.name = name;
-		self
-	}
-
-	pub fn event(mut self, event: EventInstance) -> Atlas {
-		self.event = event;
-		self
-	}
-
-	pub fn start(&self) -> Result<(), AtlasError> {
-		info!("Initializing Atlas...");
-		self.event.start();
-
-		Ok(())
-	}
-}
+pub mod event;

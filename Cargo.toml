@@ -10,6 +10,10 @@ repository = "https://github.com/nurodev/atlas"
 exclude = ["example", "target"]
 keywords = ["3D", "game engine", "gfx"]
 
+[lib]
+name = "atlas"
+path = "./src/lib.rs"
+
 [[example]]
 name = "sandbox"
 path = "examples/sandbox/src/main.rs"

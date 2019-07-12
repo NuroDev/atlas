@@ -1,3 +1,4 @@
+use crate::error::AtlasError;
 use winit::{event::{Event, WindowEvent},
             event_loop::{ControlFlow, EventLoop},
             window::WindowBuilder};
@@ -33,7 +34,7 @@ impl Instance {
 		self
 	}
 
-	pub fn start(&self) {
+	pub fn start(&self) -> Result<(), AtlasError> {
 		let event_loop = EventLoop::new();
 		let window = WindowBuilder::new()
 			.with_title(&self.title)
