@@ -21,7 +21,6 @@ path = "examples/sandbox/src/main.rs"
 [dependencies]
 cgmath = "0.17.0"
 env_logger = "0.6.2"
-ezing = "0.2.1"
 gfx-hal = "0.2.1"
 log = "0.4.6"
 quick-error = "1.2.2"
