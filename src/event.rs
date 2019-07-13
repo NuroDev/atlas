@@ -4,15 +4,15 @@ use winit::{event::{Event, WindowEvent},
             window::WindowBuilder};
 
 #[derive(Debug)]
-pub struct Instance {
+pub struct GameInstance {
 	pub title: String,
 	pub width: u32,
 	pub height: u32,
 }
 
-impl Default for Instance {
-	fn default() -> Instance {
-		Instance {
+impl Default for GameInstance {
+	fn default() -> GameInstance {
+		GameInstance {
 			title: "Atlas".to_owned(),
 			width: 1024,
 			height: 768,
@@ -20,17 +20,17 @@ impl Default for Instance {
 	}
 }
 
-impl Instance {
+impl GameInstance {
 	pub fn new() -> Self { Self::default() }
 
-	pub fn resolution(mut self, width: u32, height: u32) -> Instance {
-		self.width = width;
-		self.height = height;
+	pub fn title(mut self, title: String) -> GameInstance {
+		self.title = title;
 		self
 	}
 
-	pub fn title(mut self, title: String) -> Instance {
-		self.title = title;
+	pub fn resolution(mut self, width: u32, height: u32) -> GameInstance {
+		self.width = width;
+		self.height = height;
 		self
 	}
 
@@ -41,6 +41,8 @@ impl Instance {
 			.with_inner_size((self.width, self.height).into())
 			.build(&event_loop)
 			.expect("Failed to unwrap window builder");
+
+		info!("Starting event loop...");
 
 		event_loop.run(move |event, _, control_flow| match event {
 			Event::EventsCleared => {
