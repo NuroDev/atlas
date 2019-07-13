@@ -1,3 +1,8 @@
+os:
+  - linux
+  - osx
+  - windows
+
 language: rust
 
 rust:
@@ -10,6 +15,14 @@ matrix:
   fast_finish: true
 
 cache: cargo
+
+addons:
+  apt:
+    packages:
+    - libasound2-dev
+    - libudev-dev
+    - libx11-dev
+    - pkg-config
 
 script:
   - cargo build --verbose
