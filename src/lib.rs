@@ -85,6 +85,7 @@ feel free to submit a PR.
 
 #[macro_use]
 extern crate log;
+extern crate env_logger;
 #[macro_use]
 extern crate quick_error;
 
@@ -98,3 +99,7 @@ extern crate gfx_hal as hal;
 
 pub mod error;
 pub mod event;
+
+// Re-exports
+pub use log::*;
+pub use env_logger::*;
