@@ -15,8 +15,8 @@
 
 Clone:
 ```shell
-$ git clone https://github.com/nurodev/atlas.git
-$ cd atlas/
+git clone https://github.com/nurodev/atlas.git
+cd atlas/
 ```
 
 Build:
@@ -24,15 +24,22 @@ Build:
 cargo build --release
 ```
 
-Test:
-```shell
-cargo test
-```
-
 Run:
 ```shell
 cargo run --release --example sandbox
 ```
+
+## Inspiration:
+
+A lot of the architecture of Atlas and the way it function was inspired by other existing Rust based game engines. These include:
+ - [Amethyst](https://amethyst.rs/)
+ - [Piston](https://piston.rs/)
+ - [Kiss3D](http://kiss3d.org/)
+ - [Veloren](https://gitlab.com/veloren/veloren)
+ - [GGEZ](https://ggez.rs/)
+ - [Coffee](https://github.com/hecrj/coffee) 
+ 
+A **HUGE** thank you to all the contributors to all of those projects for their work that helped me create Atlas ❤️
 
 ## License
 
