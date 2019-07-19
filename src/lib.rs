@@ -79,8 +79,8 @@ If you think of something you'd like to add, or find something that needs to be 
 feel free to submit a PR.
 */
 
-#![doc(html_logo_url = "https://raw.githubusercontent.com/NuroDev/atlas/master/assets/Atlas-Logo-Transparent.png")]
 #![crate_name = "atlas"]
+#![doc(html_logo_url = "https://raw.githubusercontent.com/NuroDev/atlas/master/assets/Atlas-Logo-Transparent.png")]
 #![warn(dead_code)]
 
 #[macro_use]
@@ -89,7 +89,7 @@ extern crate env_logger;
 #[macro_use]
 extern crate quick_error;
 
-#[cfg(windows)]
+// Module exports
 extern crate gfx_backend_dx12 as backend;
 #[cfg(target_os = "macos")]
 extern crate gfx_backend_metal as backend;
@@ -99,6 +99,7 @@ extern crate gfx_hal as hal;
 
 pub mod error;
 pub mod event;
+pub mod graphics;
 
 // Re-exports
 pub use log::*;
