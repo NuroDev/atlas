@@ -90,7 +90,7 @@ extern crate env_logger;
 extern crate quick_error;
 
 // Module exports
-extern crate gfx_backend_dx12 as backend;
+pub mod config;
 pub mod error;
 pub mod event;
 pub mod graphics;

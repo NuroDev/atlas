@@ -1,62 +1,42 @@
-use crate::error::AtlasError;
-use winit::{event::{Event, WindowEvent},
-            event_loop::{ControlFlow, EventLoop},
-            window::WindowBuilder};
+use crate::config::Config;
+use crate::error::Result;
+use winit::event::{Event, WindowEvent};
+use winit::event_loop::{ControlFlow, EventLoop};
+use winit::window::WindowBuilder;
 
-#[derive(Debug)]
-pub struct GameInstance {
-	pub title: String,
-	pub width: u32,
-	pub height: u32,
+// TODO: Documentation
+pub trait EventHandler {
+	// TODO: Documentation
+	fn load(&mut self) -> Result;
+	// TODO: Documentation
+	fn update(&mut self) -> Result;
+	// TODO: Documentation
+	fn draw(&mut self) -> Result;
 }
 
-impl Default for GameInstance {
-	fn default() -> GameInstance {
-		GameInstance {
-			title: "Atlas".to_owned(),
-			width: 1024,
-			height: 768,
-		}
-	}
-}
+pub fn run (config: Config) -> Result 
+{
+	let event_loop = EventLoop::new();
+	let window = WindowBuilder::new()
+		.with_title(&config.title)
+		.with_inner_size((config.width, config.height).into())
+		.build(&event_loop)
+		.expect("Failed to unwrap window builder");
 
-impl GameInstance {
-	pub fn new() -> Self { Self::default() }
+	info!("Starting event loop...");
 
-	pub fn title(mut self, title: String) -> GameInstance {
-		self.title = title;
-		self
-	}
-
-	pub fn resolution(mut self, width: u32, height: u32) -> GameInstance {
-		self.width = width;
-		self.height = height;
-		self
-	}
-
-	pub fn start(&self) -> Result<(), AtlasError> {
-		let event_loop = EventLoop::new();
-		let window = WindowBuilder::new()
-			.with_title(&self.title)
-			.with_inner_size((self.width, self.height).into())
-			.build(&event_loop)
-			.expect("Failed to unwrap window builder");
-
-		info!("Starting event loop...");
-
-		event_loop.run(move |event, _, control_flow| match event {
-			Event::EventsCleared => {
-				window.request_redraw();
-			},
-			Event::WindowEvent {
-				event: WindowEvent::RedrawRequested,
-				..
-			} => {},
-			Event::WindowEvent {
-				event: WindowEvent::CloseRequested,
-				..
-			} => *control_flow = ControlFlow::Exit,
-			_ => *control_flow = ControlFlow::Wait,
-		});
-	}
+	event_loop.run(move |event, _, control_flow| match event {
+		Event::EventsCleared => {
+			window.request_redraw();
+		},
+		Event::WindowEvent {
+			event: WindowEvent::RedrawRequested,
+			..
+		} => {},
+		Event::WindowEvent {
+			event: WindowEvent::CloseRequested,
+			..
+		} => *control_flow = ControlFlow::Exit,
+		_ => *control_flow = ControlFlow::Wait,
+	});
 }
