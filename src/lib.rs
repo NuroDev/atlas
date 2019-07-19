@@ -103,3 +103,4 @@ pub mod event;
 // Re-exports
 pub use log::*;
 pub use env_logger::*;
+pub extern crate nalgebra as math;

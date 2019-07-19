@@ -19,10 +19,10 @@ name = "sandbox"
 path = "examples/sandbox/src/main.rs"
 
 [dependencies]
-cgmath = "0.17.0"
 env_logger = "0.6.2"
 gfx-hal = "0.2.1"
 log = "0.4.6"
+nalgebra = "0.18.0"
 quick-error = "1.2.2"
 winit = "0.20.0-alpha2"
 
