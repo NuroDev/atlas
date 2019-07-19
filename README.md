@@ -31,7 +31,7 @@ cargo run --release --example sandbox
 
 ## Inspiration:
 
-A lot of the architecture of Atlas and the way it function was inspired by other existing Rust based game engines. These include:
+A lot of the architecture of Atlas and the way it functions was inspired by other existing Rust based game engines. These include:
  - [Amethyst](https://amethyst.rs/)
  - [Piston](https://piston.rs/)
  - [Kiss3D](http://kiss3d.org/)
@@ -39,8 +39,8 @@ A lot of the architecture of Atlas and the way it function was inspired by other
  - [GGEZ](https://ggez.rs/)
  - [Coffee](https://github.com/hecrj/coffee) 
  
-A **HUGE** thank you to all the contributors to all of those projects for their work that helped me create Atlas ❤️
+A **HUGE** thank you to all the contributors to all of those projects for their work that helped guide me in my creation of Atlas ❤️
 
 ## License
 
-MIT
+MIT © [Ben Dixon](https://github.com/NuroDev/atlas/blob/master/LICENSE)
