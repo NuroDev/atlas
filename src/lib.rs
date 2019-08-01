@@ -30,10 +30,12 @@ atlas = { git ="https://github.com/nurodev/atlas" }
 
 ## Example:
 ```rust
+#[macro_use]
 extern crate atlas;
 
-use atlas::Atlas;
-use atlas::window::Window;
+use atlas::config::{Config, WindowMode};
+use atlas::error::Result;
+use atlas::event::EventHandler;
 
 struct MyGame {
   // Game assets & state
@@ -42,30 +44,32 @@ struct MyGame {
 impl Atlas for MyGame {
   fn load(&mut self) {
     // Load the application & any assets
+    Ok(())
   }
 
   fn draw(&mut self) {
     // Draw a new frame
+    Ok(())
   }
   
   fn update (&mut self) {
     // Update every tick
+    Ok(())
   }
 }
 
-fn main() -> Result<()> {
+fn main() {
     // Create a new application window
-    let window = Window::new()
+    let config = Config::new()
+                .window_mode(WindowMode::Windowed)
                 .title("My Game".to_owned())
-                .resolution(1024, 768)
-                .resizable(false)
-                .fullscreenable(false);
+                .resolution(1024, 768);
 
     // Run the application
-    match MyGame::run(window) {
+    match atlas::event::run(config) {
       Ok(_) => exit(0),
       Err(e) => {
-        error!("Error: {:?}", e);
+        error!("{:?}", e);
         exit(1);
       },
     }
