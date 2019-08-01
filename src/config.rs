@@ -17,7 +17,7 @@ pub struct Config {
 	/// Path for the application icon
 	pub icon: String,
 	/// Window mode
-	pub mode: WindowMode,
+	pub window_mode: WindowMode,
 	/// If the window resizable
 	pub resizable: bool,
 	/// Window title
@@ -33,7 +33,7 @@ impl Default for Config {
 		Config {
 			height: 768,
 			icon: String::new(),
-			mode: WindowMode::Windowed,
+			window_mode: WindowMode::Windowed,
 			resizable: false,
 			title: "Atlas".to_owned(),
 			vsync: true,
@@ -49,13 +49,7 @@ impl Config {
 		self
 	}
 
-	/// Set the window mode
-	pub fn mode(mut self, mode: WindowMode) -> Self {
-		self.mode = mode;
-		self
-	}
-
-	///  Create new `Config` instance using `Config::Default`
+	///  Create new `Config` instance using default values
 	pub fn new() -> Self { Self::default() }
 
 	/// Set whether the window is resizable
@@ -80,6 +74,12 @@ impl Config {
 	/// Set whether to use V-sync or not
 	pub fn vsync(mut self, vsync: bool) -> Self {
 		self.vsync = vsync;
+		self
+	}
+
+	/// Set the window mode
+	pub fn window_mode(mut self, window_mode: WindowMode) -> Self {
+		self.window_mode = window_mode;
 		self
 	}
 }

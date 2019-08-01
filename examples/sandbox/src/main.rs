@@ -31,14 +31,14 @@ fn main() {
 	info!("Initializing Sandbox...");
 
 	let config = Config::new()
-		.mode(WindowMode::Windowed)
+		.window_mode(WindowMode::Windowed)
 		.title("Sandbox".to_owned())
 		.resolution(1024, 768);
 
 	match atlas::event::run(config) {
 		Ok(_) => exit(0),
 		Err(e) => {
-			println!("Error: {:?}", e);
+			error!("{:?}", e);
 			exit(1);
 		},
 	}
