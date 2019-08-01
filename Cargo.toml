@@ -1,6 +1,6 @@
 [package]
 name = "atlas"
-description = "🦀 3D game engine built using Rust"
+description = "🌈 3D game engine built using Rust"
 version = "1.1.1"
 authors = ["N U R O ™ <me@nuro.sh>"]
 license = "MIT"
@@ -9,6 +9,9 @@ readme = "README.md"
 repository = "https://github.com/nurodev/atlas"
 exclude = ["example", "target"]
 keywords = ["3D", "game engine", "gfx"]
+
+[badges]
+travis-ci = { repository = "nurodev/atlas", branch = "master" }
 
 [lib]
 name = "atlas"
