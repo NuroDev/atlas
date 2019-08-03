@@ -59,6 +59,9 @@ impl Atlas for MyGame {
 }
 
 fn main() {
+    // Initialize logging
+    env_logger::init();
+
     // Create a new application window
     let config = Config::new()
                 .window_mode(WindowMode::Windowed)
