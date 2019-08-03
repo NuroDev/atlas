@@ -6,6 +6,7 @@ use atlas::error::Result;
 use atlas::event::EventHandler;
 use std::process::exit;
 
+#[allow(dead_code)]
 struct Sandbox {}
 
 impl EventHandler for Sandbox {
