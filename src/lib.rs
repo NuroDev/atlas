@@ -36,6 +36,7 @@ extern crate atlas;
 use atlas::config::{Config, WindowMode};
 use atlas::error::Result;
 use atlas::event::EventHandler;
+use std::process::exit;
 
 struct MyGame {
   // Game assets & state
@@ -62,7 +63,7 @@ fn main() {
     // Initialize logging
     env_logger::init();
 
-    // Create a new application window
+    // Create a new application config
     let config = Config::new()
                 .window_mode(WindowMode::Windowed)
                 .title("My Game".to_owned())
