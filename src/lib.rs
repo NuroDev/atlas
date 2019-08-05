@@ -25,44 +25,39 @@ Atlas is still a work-in-progress project and is not recommended for production 
 You can install Atlas by adding Atlas as a dependency to you `Cargo.toml` file.
 ```sh
 [dependencies]
-atlas = { git ="https://github.com/nurodev/atlas" }
+atlas = { git = "https://github.com/nurodev/atlas" }
 ```
 
 ## Example:
 ```rust
-#[macro_use]
-extern crate atlas;
-
 use atlas::config::{Config, WindowMode};
 use atlas::error::Result;
 use atlas::event::EventHandler;
 use std::process::exit;
 
+#[allow(dead_code)]
 struct MyGame {
   // Game assets & state
 }
 
-impl Atlas for MyGame {
-  fn load(&mut self) {
+impl EventHandler for MyGame {
+  fn load(&mut self) -> Result {
     // Load the application & any assets
     Ok(())
   }
 
-  fn draw(&mut self) {
+  fn draw(&mut self) -> Result {
     // Draw a new frame
     Ok(())
   }
   
-  fn update (&mut self) {
+  fn update (&mut self) -> Result {
     // Update every tick
     Ok(())
   }
 }
 
 fn main() {
-    // Initialize logging
-    env_logger::init();
-
     // Create a new application config
     let config = Config::new()
                 .window_mode(WindowMode::Windowed)
@@ -73,7 +68,7 @@ fn main() {
     match atlas::event::run(config) {
       Ok(_) => exit(0),
       Err(e) => {
-        error!("{:?}", e);
+        panic!("{:?}", e);
         exit(1);
       },
     }
