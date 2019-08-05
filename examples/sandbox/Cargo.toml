@@ -10,3 +10,5 @@ path = "src/main.rs"
 
 [dependencies]
 atlas = { path = "../../atlas" }
+env_logger = "0.6.2"
+log = "0.4.6"

@@ -1,5 +1,6 @@
 #[macro_use]
-extern crate atlas;
+extern crate log;
+extern crate env_logger;
 
 use atlas::config::{Config, WindowMode};
 use atlas::error::Result;
