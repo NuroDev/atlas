@@ -21,12 +21,17 @@ cd atlas/
 
 Build:
 ```shell
-cargo build --release
+cargo build
 ```
 
 Run:
 ```shell
-cargo run --release --example sandbox
+cargo run --example sandbox
+```
+
+Docs:
+```shell
+cargo doc --no-deps --open
 ```
 
 ## Inspiration:
