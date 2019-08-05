@@ -67,10 +67,7 @@ fn main() {
     // Run the application
     match atlas::event::run(config) {
       Ok(_) => exit(0),
-      Err(e) => {
-        panic!("{:?}", e);
-        exit(1);
-      },
+      Err(e) => panic!("{:?}", e),
     }
 }
 ```
