@@ -4,13 +4,13 @@ use winit::event::{Event, WindowEvent};
 use winit::event_loop::{ControlFlow, EventLoop};
 use winit::window::WindowBuilder;
 
-// TODO: Documentation
+/// TODO: Documentation
 pub trait EventHandler {
-	// TODO: Documentation
+	/// TODO: Documentation
 	fn load(&mut self) -> Result;
-	// TODO: Documentation
+	/// TODO: Documentation
 	fn update(&mut self) -> Result;
-	// TODO: Documentation
+	/// TODO: Documentation
 	fn draw(&mut self) -> Result;
 }
 

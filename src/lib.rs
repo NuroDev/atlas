@@ -80,7 +80,9 @@ feel free to submit a PR.
 */
 
 #![crate_name = "atlas"]
-#![doc(html_logo_url = "https://raw.githubusercontent.com/NuroDev/atlas/master/assets/Logo-Transparent.svg?sanitize=true")]
+#![doc(
+	html_logo_url = "https://raw.githubusercontent.com/NuroDev/atlas/master/assets/Logo-Transparent.svg?sanitize=true"
+)]
 #![warn(dead_code)]
 
 #[macro_use]
@@ -89,12 +91,12 @@ extern crate env_logger;
 #[macro_use]
 extern crate quick_error;
 
-// Module exports
+// Core Modules
 pub mod config;
 pub mod error;
 pub mod event;
 pub mod graphics;
 
-// Re-exports
+// Export Modules
 pub extern crate nalgebra as math;
 pub use hal::window::Extent2D as WindowResolution;
