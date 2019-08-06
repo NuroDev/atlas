@@ -1,3 +1,5 @@
+use hal::window::Extent2D;
+
 /// TODO: Documentation
 #[derive(Debug, Copy, Clone)]
 pub enum WindowMode {
@@ -12,32 +14,32 @@ pub enum WindowMode {
 /// TODO: Documentation
 #[derive(Debug, Clone)]
 pub struct Config {
-	/// Window height
-	pub height: u32,
 	/// Path for the application icon
 	pub icon: String,
 	/// Window mode
 	pub window_mode: WindowMode,
 	/// If the window resizable
 	pub resizable: bool,
+	/// Window resolution (Width x Height)
+	pub resolution: Extent2D,
 	/// Window title
 	pub title: String,
 	/// Whether to enable v-sync or not
 	pub vsync: bool,
-	/// Window width
-	pub width: u32,
 }
 
 impl Default for Config {
 	fn default() -> Config {
 		Config {
-			height: 768,
 			icon: String::new(),
 			window_mode: WindowMode::Windowed,
 			resizable: false,
+			resolution: Extent2D {
+				width: 1024,
+				height: 768,
+			},
 			title: "Atlas".to_owned(),
 			vsync: true,
-			width: 1024,
 		}
 	}
 }
@@ -59,9 +61,8 @@ impl Config {
 	}
 
 	/// Set the window resolution (width/height)
-	pub fn resolution(mut self, width: u32, height: u32) -> Self {
-		self.width = width;
-		self.height = height;
+	pub fn resolution(mut self, resolution: Extent2D) -> Self {
+		self.resolution = resolution;
 		self
 	}
 
