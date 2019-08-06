@@ -1,5 +1,5 @@
 /*!
-[![](https://github.com/NuroDev/atlas/blob/master/assets/Atlas-Banner.png?raw=true)](https://github.com/nurodev/atlas)
+[![](https://github.com/NuroDev/atlas/blob/master/assets/Banner.svg?sanitize=true)](https://github.com/nurodev/atlas)
 
 ## Features: 
 * Coming Soon
@@ -80,7 +80,7 @@ feel free to submit a PR.
 */
 
 #![crate_name = "atlas"]
-#![doc(html_logo_url = "https://raw.githubusercontent.com/NuroDev/atlas/master/assets/Atlas-Logo-Transparent.png")]
+#![doc(html_logo_url = "https://github.com/NuroDev/atlas/blob/master/assets/Logo-Transparent.svg?sanitize=true")]
 #![warn(dead_code)]
 
 #[macro_use]
