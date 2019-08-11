@@ -1,8 +1,7 @@
 use crate::config::Config;
 use crate::error::Result;
-use winit::event::{Event, WindowEvent};
-use winit::event_loop::{ControlFlow, EventLoop};
-use winit::window::WindowBuilder;
+use winit::{ControlFlow, Event, EventsLoop, WindowEvent};
+use winit::WindowBuilder;
 
 // TODO: Documentation
 pub trait EventHandler {
@@ -14,29 +13,23 @@ pub trait EventHandler {
 	fn draw(&mut self) -> Result;
 }
 
-pub fn run (config: Config) -> Result 
+pub fn run (config: Config) -> Result
 {
-	let event_loop = EventLoop::new();
+	let mut event_loop = EventsLoop::new();
 	let window = WindowBuilder::new()
 		.with_title(&config.title)
-		.with_inner_size((config.width, config.height).into())
+		.with_dimensions((config.width, config.height).into())
 		.build(&event_loop)
 		.expect("Failed to unwrap window builder");
 
 	info!("Starting event loop...");
 
-	event_loop.run(move |event, _, control_flow| match event {
-		Event::EventsCleared => {
-			window.request_redraw();
+	event_loop.run_forever(|event| match event {
+		Event::WindowEvent { event: WindowEvent::CloseRequested, .. } => {
+			ControlFlow::Break
 		},
-		Event::WindowEvent {
-			event: WindowEvent::RedrawRequested,
-			..
-		} => {},
-		Event::WindowEvent {
-			event: WindowEvent::CloseRequested,
-			..
-		} => *control_flow = ControlFlow::Exit,
-		_ => *control_flow = ControlFlow::Wait,
+		_ => ControlFlow::Continue,
 	});
+
+	Ok(())
 }
