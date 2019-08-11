@@ -18,7 +18,7 @@ pub fn run (config: Config) -> Result
 	let mut event_loop = EventsLoop::new();
 	let window = WindowBuilder::new()
 		.with_title(&config.title)
-		.with_dimensions((config.width, config.height).into())
+		.with_dimensions((config.resolution.width, config.resolution.height).into())
 		.build(&event_loop)
 		.expect("Failed to unwrap window builder");
 
