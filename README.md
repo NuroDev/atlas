@@ -1,7 +1,7 @@
 <div align='center'>
 
   <a href='https://github.com/nurodev/atlas/releases'>
-    <img alt='Atlas'  src='https://github.com/NuroDev/atlas/blob/master/assets/Banner.svg?sanitize=true' />
+    <img alt='Atlas'  src='https://github.com/NuroDev/atlas/blob/master/assets/Banner.png?sanitize=true' />
   </a>
 
   [![License](https://img.shields.io/badge/license-mit-blue.svg?longCache=true&style=for-the-badge)](http://www.gnu.org/licenses/) 
