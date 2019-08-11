@@ -4,8 +4,7 @@ extern crate env_logger;
 
 use atlas::{config::{Config, WindowMode},
             error::Result,
-            event::EventHandler,
-            WindowResolution};
+            event::EventHandler};
 use std::process::exit;
 
 #[allow(dead_code)]
@@ -36,10 +35,7 @@ fn main() {
 	let config = Config::new()
 		.window_mode(WindowMode::Windowed)
 		.title("Sandbox".to_owned())
-		.resolution(WindowResolution {
-			width: 1024,
-			height: 768,
-		});
+		.resolution(1024, 768);
 
 	match atlas::event::run(config) {
 		Ok(_) => exit(0),

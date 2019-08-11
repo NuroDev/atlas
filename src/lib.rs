@@ -99,4 +99,3 @@ pub mod graphics;
 
 // Export Modules
 pub extern crate nalgebra as math;
-pub use hal::window::Extent2D as WindowResolution;

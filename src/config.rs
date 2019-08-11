@@ -1,4 +1,4 @@
-use hal::window::Extent2D;
+use gfx_hal::window::Extent2D;
 
 /// TODO: Documentation
 #[derive(Debug, Copy, Clone)]
@@ -61,8 +61,11 @@ impl Config {
 	}
 
 	/// Set the window resolution (width/height)
-	pub fn resolution(mut self, resolution: Extent2D) -> Self {
-		self.resolution = resolution;
+	pub fn resolution(mut self, width: u32, height: u32) -> Self {
+		self.resolution = Extent2D {
+			width,
+			height,
+		};
 		self
 	}
 
