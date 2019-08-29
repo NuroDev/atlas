@@ -1,12 +1,13 @@
 <div align='center'>
 
   <a href='https://github.com/nurodev/atlas/releases'>
-    <img alt='Atlas'  src='https://github.com/NuroDev/atlas/blob/master/assets/Banner.png?sanitize=true' />
+    <img alt='Atlas' src='./assets/Banner.png?sanitize=true' />
   </a>
 
-  [![License](https://img.shields.io/badge/license-mit-blue.svg?longCache=true&style=for-the-badge)](http://www.gnu.org/licenses/) 
-  [![gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/) 
   [![Travis](https://img.shields.io/travis/NuroDev/Atlas/master.svg?style=for-the-badge)](https://travis-ci.org/NuroDev/Atlas) 
+  [![License](https://img.shields.io/badge/-mit-blue.svg?longCache=true&style=for-the-badge)](http://www.gnu.org/licenses/) 
+  [![Gitmoji](https://img.shields.io/badge/-%20%F0%9F%98%9C-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/) 
+  [![Figma](https://img.shields.io/badge/-2C2C2C.svg?logo=figma&logoColor=white&longCache=true&style=for-the-badge)](https://www.figma.com/file/a5yG3zVdkGc1ervX4Gl3Lx/Atlas) 
 
   <br />
 </div>
