@@ -2,9 +2,7 @@
 extern crate log;
 extern crate env_logger;
 
-use atlas::{config::{Config, WindowMode},
-            error::Result,
-            event::EventHandler};
+use atlas::{config::Config, error::Result, event::EventHandler};
 use std::process::exit;
 
 #[allow(dead_code)]
@@ -32,10 +30,7 @@ fn main() {
 
 	info!("Initializing Sandbox...");
 
-	let config = Config::new()
-		.window_mode(WindowMode::Windowed)
-		.title("Sandbox".to_owned())
-		.resolution(1024, 768);
+	let config = Config::new().title("Sandbox".to_owned());
 
 	match atlas::event::run(config) {
 		Ok(_) => exit(0),

@@ -30,7 +30,7 @@ atlas = { git = "https://github.com/nurodev/atlas" }
 
 ## Example:
 ```rust
-use atlas::config::{Config, WindowMode};
+use atlas::config::Config;
 use atlas::error::Result;
 use atlas::event::EventHandler;
 use std::process::exit;
@@ -60,9 +60,7 @@ impl EventHandler for MyGame {
 fn main() {
     // Create a new application config
     let config = Config::new()
-                .window_mode(WindowMode::Windowed)
-                .title("My Game".to_owned())
-                .resolution(1024, 768);
+                .title("My Game".to_owned());
 
     // Run the application
     match atlas::event::run(config) {
