@@ -1,0 +1,13 @@
+[book]
+title = "atlas"
+authors = ["N U R O ™ <me@nuro.sh>"]
+
+[output.html]
+git-repository-url = "https://github.com/nurodev/atlas"
+additional-css = ["./custom.css"]
+
+[output.linkcheck]
+
+[build]
+build-dir = "../target/book"
+create-missing = true

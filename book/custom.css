@@ -1,0 +1,9 @@
+/* Hide menu bar title */
+.menu-title {
+  opacity: 0;
+}
+
+/* Make sidebar items more seperated */
+.chapter li {
+  padding: 8px 0;
+}

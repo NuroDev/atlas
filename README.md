@@ -1,7 +1,7 @@
 <div align='center'>
 
   <a href='https://github.com/nurodev/atlas/releases'>
-    <img alt='Atlas' src='./assets/Banner.png?sanitize=true' />
+    <img alt='Atlas' src='./book/src/assets/Banner.png?sanitize=true' />
   </a>
 
   [![Travis](https://img.shields.io/travis/NuroDev/Atlas/master.svg?style=for-the-badge)](https://travis-ci.org/NuroDev/Atlas) 
