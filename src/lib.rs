@@ -83,12 +83,6 @@ feel free to submit a PR.
 )]
 #![warn(dead_code)]
 
-#[macro_use]
-extern crate log;
-extern crate env_logger;
-#[macro_use]
-extern crate quick_error;
-
 // Core Modules
 pub mod config;
 pub mod error;

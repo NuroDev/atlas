@@ -1,8 +1,7 @@
-#[macro_use]
-extern crate log;
-extern crate env_logger;
-
-use atlas::{config::Config, error::Result, event::EventHandler};
+use atlas::{config::Config,
+            error::Result,
+            event::EventHandler};
+use log::{error, info};
 use std::process::exit;
 
 #[allow(dead_code)]

@@ -1,7 +1,6 @@
-use crate::config::Config;
-use crate::error::Result;
-use winit::{ControlFlow, Event, EventsLoop, WindowEvent};
-use winit::WindowBuilder;
+use crate::{config::Config, error::Result};
+use log::info;
+use winit::{ControlFlow, Event, EventsLoop, WindowBuilder, WindowEvent};
 
 /// TODO: Documentation
 pub trait EventHandler {
@@ -25,9 +24,10 @@ pub fn run (config: Config) -> Result
 	info!("Starting event loop...");
 
 	event_loop.run_forever(|event| match event {
-		Event::WindowEvent { event: WindowEvent::CloseRequested, .. } => {
-			ControlFlow::Break
-		},
+		Event::WindowEvent {
+			event: WindowEvent::CloseRequested,
+			..
+		} => ControlFlow::Break,
 		_ => ControlFlow::Continue,
 	});
 
