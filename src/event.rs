@@ -12,8 +12,7 @@ pub trait EventHandler {
 	fn draw(&mut self) -> Result;
 }
 
-pub fn run (config: Config) -> Result
-{
+pub fn run(config: Config) -> Result {
 	let mut event_loop = EventsLoop::new();
 	let window = WindowBuilder::new()
 		.with_title(&config.title)

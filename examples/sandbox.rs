@@ -1,6 +1,4 @@
-use atlas::{config::Config,
-            error::Result,
-            event::EventHandler};
+use atlas::{config::Config, error::Result, event::EventHandler};
 use log::{error, info};
 use std::process::exit;
 
