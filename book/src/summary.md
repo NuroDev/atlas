@@ -8,7 +8,7 @@
   - [C++ Vs Rust](cpp_vs_rust.md)
 
 - [Planning](planning.md)
-  - [What do I want to build?](what_to_build.md)
+  - [End Goal](end_goal.md)
   - [Research](research.md)
 
 - [Architecture](architecture.md)
