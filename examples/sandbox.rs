@@ -15,7 +15,7 @@ impl Game for Sandbox {
 		// Cleanup before closing the application
 		Ok(())
 	}
-	
+
 	fn load(&mut self) -> Result<()> {
 		// Load the application & any assets
 		Ok(())
