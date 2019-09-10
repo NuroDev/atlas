@@ -1,18 +1,23 @@
-use atlas::{config::Config, error::Result, event::EventHandler};
+use atlas::{config::Config, error::Result, event::Game};
 use log::{error, info};
 use std::process::exit;
 
 #[allow(dead_code)]
 struct Sandbox {}
 
-impl EventHandler for Sandbox {
-	fn load(&mut self) -> Result<()> {
-		// Load the application & any assets
+impl Game for Sandbox {
+	fn draw(&mut self) -> Result<()> {
+		// Draw a new frame
 		Ok(())
 	}
 
-	fn draw(&mut self) -> Result<()> {
-		// Draw a new frame
+	fn exit(&mut self) -> Result<()> {
+		// Cleanup before closing the application
+		Ok(())
+	}
+	
+	fn load(&mut self) -> Result<()> {
+		// Load the application & any assets
 		Ok(())
 	}
 
