@@ -32,7 +32,7 @@ atlas = { git = "https://github.com/nurodev/atlas" }
 ```rust
 use atlas::config::Config;
 use atlas::error::Result;
-use atlas::event::EventHandler;
+use atlas::event::Game;
 use std::process::exit;
 
 #[allow(dead_code)]
@@ -40,27 +40,31 @@ struct MyGame {
   // Game assets & state
 }
 
-impl EventHandler for MyGame {
-  fn load(&mut self) -> Result {
-    // Load the application & any assets
-    Ok(())
-  }
+impl Game for MyGame {
+  fn draw(&mut self) -> Result<()> {
+		// Draw a new frame
+		Ok(())
+	}
 
-  fn draw(&mut self) -> Result {
-    // Draw a new frame
-    Ok(())
-  }
-  
-  fn update (&mut self) -> Result {
-    // Update every tick
-    Ok(())
-  }
+	fn exit(&mut self) -> Result<()> {
+		// Cleanup before closing the application
+		Ok(())
+	}
+	
+	fn load(&mut self) -> Result<()> {
+		// Load the application & any assets
+		Ok(())
+	}
+
+	fn update(&mut self) -> Result<()> {
+		// Update every tick
+		Ok(())
+	}
 }
 
 fn main() {
     // Create a new application config
-    let config = Config::new()
-                .title("My Game".to_owned());
+    let config = Config::new().set_title("My Game".to_owned());
 
     // Run the application
     match atlas::event::run(config) {

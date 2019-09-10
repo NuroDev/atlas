@@ -32,7 +32,7 @@ fn main() {
 
 	info!("Initializing Sandbox...");
 
-	let config = Config::new().title("Sandbox".to_owned());
+	let config = Config::new().set_title("Sandbox".to_owned());
 
 	match atlas::event::run(config) {
 		Ok(_) => exit(0),

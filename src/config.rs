@@ -52,19 +52,19 @@ impl Default for Config {
 
 impl Config {
 	/// Set the application icon
-	pub fn icon(mut self, icon: String) -> Self {
+	pub fn set_icon(mut self, icon: String) -> Self {
 		self.icon = icon.to_owned();
 		self
 	}
 
 	/// Set whether the window is resizable
-	pub fn resizable(mut self, resizable: bool) -> Self {
+	pub fn set_resizable(mut self, resizable: bool) -> Self {
 		self.resizable = resizable;
 		self
 	}
 
 	/// Set the window resolution (width/height)
-	pub fn resolution(mut self, width: u32, height: u32) -> Self {
+	pub fn set_resolution(mut self, width: u32, height: u32) -> Self {
 		self.resolution = Resolution {
 			width,
 			height,
@@ -73,13 +73,13 @@ impl Config {
 	}
 
 	/// Set the window title
-	pub fn title(mut self, title: String) -> Self {
+	pub fn set_title(mut self, title: String) -> Self {
 		self.title = title;
 		self
 	}
 
 	/// Set whether to use V-sync or not
-	pub fn vsync(mut self, vsync: bool) -> Self {
+	pub fn set_vsync(mut self, vsync: bool) -> Self {
 		self.vsync = vsync;
 		self
 	}
