@@ -2,6 +2,23 @@ use derive_new::new;
 
 /// TODO: Documentation
 #[derive(Clone, Debug)]
+pub enum WindowMode {
+	/// Free floating window
+	Borderless,
+	/// Complete fullscreen window
+	Fullscreen,
+	/// Fake fullscreen (Plays better with alt tabbing/Multiple monitors) window
+	Windowed,
+}
+
+impl Default for WindowMode {
+	fn default() -> WindowMode {
+		WindowMode::Windowed
+	}
+}
+
+/// TODO: Documentation
+#[derive(Clone, Debug)]
 pub struct Resolution {
 	/// TODO: Documentation
 	pub width: u32,
@@ -24,18 +41,26 @@ pub struct Config {
 	/// Path for the application icon
 	#[new(default)]
 	pub icon: String,
+
 	/// If the window resizable
 	#[new(default)]
 	pub resizable: bool,
+
 	/// Window resolution (Width x Height)
 	#[new(default)]
 	pub resolution: Resolution,
+
 	/// Window title
 	#[new(default)]
 	pub title: String,
+
 	/// Whether to enable v-sync or not
 	#[new(default)]
 	pub vsync: bool,
+
+	/// Window mode
+	#[new(default)]
+	pub window_mode: WindowMode,
 }
 
 impl Default for Config {
@@ -46,6 +71,7 @@ impl Default for Config {
 			resolution: Resolution::default(),
 			title: "Atlas".to_owned(),
 			vsync: true,
+			window_mode: WindowMode::Windowed,
 		}
 	}
 }
@@ -81,6 +107,12 @@ impl Config {
 	/// Set whether to use V-sync or not
 	pub fn set_vsync(mut self, vsync: bool) -> Self {
 		self.vsync = vsync;
+		self
+	}
+
+	/// Set the window mode
+	pub fn set_window_mode(mut self, window_mode: WindowMode) -> Self {
+		self.window_mode = window_mode;
 		self
 	}
 }
