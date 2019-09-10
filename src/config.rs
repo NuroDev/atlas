@@ -1,30 +1,40 @@
-use gfx_hal::window::Extent2D;
+use derive_new::new;
 
 /// TODO: Documentation
-#[derive(Debug, Copy, Clone)]
-pub enum WindowMode {
-	/// Free floating window
-	Borderless,
-	/// Complete fullscreen window
-	Fullscreen,
-	/// Fake fullscreen (Plays better with alt tabbing/Multiple monitors) window
-	Windowed,
+#[derive(Clone, Debug)]
+pub struct Resolution {
+	/// TODO: Documentation
+	pub width: u32,
+	/// TODO: Documentation
+	pub height: u32,
+}
+
+impl Default for Resolution {
+	fn default() -> Resolution {
+		Resolution {
+			width: 1024,
+			height: 768,
+		}
+	}
 }
 
 /// TODO: Documentation
-#[derive(Debug, Clone)]
+#[derive(Clone, Debug, new)]
 pub struct Config {
 	/// Path for the application icon
+	#[new(default)]
 	pub icon: String,
-	/// Window mode
-	pub window_mode: WindowMode,
 	/// If the window resizable
+	#[new(default)]
 	pub resizable: bool,
 	/// Window resolution (Width x Height)
-	pub resolution: Extent2D,
+	#[new(default)]
+	pub resolution: Resolution,
 	/// Window title
+	#[new(default)]
 	pub title: String,
 	/// Whether to enable v-sync or not
+	#[new(default)]
 	pub vsync: bool,
 }
 
@@ -32,12 +42,8 @@ impl Default for Config {
 	fn default() -> Config {
 		Config {
 			icon: String::new(),
-			window_mode: WindowMode::Windowed,
 			resizable: false,
-			resolution: Extent2D {
-				width: 1024,
-				height: 768,
-			},
+			resolution: Resolution::default(),
 			title: "Atlas".to_owned(),
 			vsync: true,
 		}
@@ -51,9 +57,6 @@ impl Config {
 		self
 	}
 
-	///  Create new `Config` instance using default values
-	pub fn new() -> Self { Self::default() }
-
 	/// Set whether the window is resizable
 	pub fn resizable(mut self, resizable: bool) -> Self {
 		self.resizable = resizable;
@@ -62,7 +65,7 @@ impl Config {
 
 	/// Set the window resolution (width/height)
 	pub fn resolution(mut self, width: u32, height: u32) -> Self {
-		self.resolution = Extent2D {
+		self.resolution = Resolution {
 			width,
 			height,
 		};
@@ -78,12 +81,6 @@ impl Config {
 	/// Set whether to use V-sync or not
 	pub fn vsync(mut self, vsync: bool) -> Self {
 		self.vsync = vsync;
-		self
-	}
-
-	/// Set the window mode
-	pub fn window_mode(mut self, window_mode: WindowMode) -> Self {
-		self.window_mode = window_mode;
 		self
 	}
 }

@@ -20,6 +20,7 @@ name = "atlas"
 path = "./src/lib.rs"
 
 [dependencies]
+derive-new = "0.5.8"
 env_logger = "0.6.2"
 gfx-hal = "0.2.1"
 log = "0.4.6"
