@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "name": "atlas",
+    "alias": "atlas.nuro.sh",
+    "public": true,
+    "routes": [
+        {
+            "src": "/docs",
+            "status": 301,
+            "headers": {
+                "Location": "https://docs.atlas.nuro.sh"
+            }
+        },
+        {
+            "src": "/(.*)",
+            "status": 301,
+            "headers": {
+                "Location": "https://github.com/nurodev/atlas"
+            }
+        }
+    ]
+}
