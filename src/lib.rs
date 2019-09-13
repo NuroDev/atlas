@@ -1,5 +1,5 @@
 /*!
-[![](https://raw.githubusercontent.com/NuroDev/atlas/master/assets/Banner.png)](https://github.com/nurodev/atlas)
+[![](https://raw.githubusercontent.com/NuroDev/atlas/master/book/src/assets/Banner.png)](https://github.com/nurodev/atlas)
 
 ## Features: 
 * Coming Soon
@@ -78,7 +78,7 @@ feel free to submit a PR.
 
 #![crate_name = "atlas"]
 #![doc(
-	html_logo_url = "https://raw.githubusercontent.com/NuroDev/atlas/master/assets/Logo.png"
+	html_logo_url = "https://raw.githubusercontent.com/NuroDev/atlas/master/book/src/assets/Logo.png"
 )]
 #![warn(dead_code)]
 
