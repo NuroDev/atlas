@@ -19,6 +19,13 @@ travis-ci = { repository = "nurodev/atlas", branch = "master" }
 name = "atlas"
 path = "./src/lib.rs"
 
+[features]
+default = []
+metal = ["gfx-backend-metal"]
+dx11 = ["gfx-backend-dx11"]
+dx12 = ["gfx-backend-dx12"]
+vulkan = ["gfx-backend-vulkan"]
+
 [dependencies]
 derive-new = "0.5.8"
 env_logger = "0.6.2"
@@ -28,11 +35,18 @@ nalgebra = "0.18.0"
 quick-error = "1.2.2"
 winit = "0.19.2"
 
+[target.'cfg(windows)'.dependencies.gfx-backend-dx11]
+version = "0.3.0"
+optional = true
+
 [target.'cfg(windows)'.dependencies.gfx-backend-dx12]
-version = "0.2"
+version = "0.3.3"
+optional = true
 
 [target.'cfg(target_os = "macos")'.dependencies.gfx-backend-metal]
-version = "0.2"
+version = "0.3.3"
+optional = true
 
 [target.'cfg(all(unix, not(target_os = "macos")))'.dependencies.gfx-backend-vulkan]
-version = "0.2"
+version = "0.3.3"
+optional = true
