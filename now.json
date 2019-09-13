@@ -3,6 +3,9 @@
     "name": "atlas",
     "alias": "atlas.nuro.sh",
     "public": true,
+    "github": {
+        "autoAlias": true
+    },
     "routes": [
         {
             "src": "/docs",
