@@ -30,18 +30,13 @@ atlas = { git = "https://github.com/nurodev/atlas" }
 
 ## Example:
 ```rust
-use atlas::config::Config;
-use atlas::Result;
-use atlas::event::Game;
+use atlas::{config::Config, event::Game, Result};
 use std::process::exit;
 
-#[allow(dead_code)]
-struct MyGame {
-  // Game assets & state
-}
+struct MyGame;
 
 impl Game for MyGame {
-  fn draw(&mut self) -> Result<()> {
+	fn draw(&mut self) -> Result<()> {
 		// Draw a new frame
 		Ok(())
 	}
@@ -67,7 +62,7 @@ fn main() {
     let config = Config::new().set_title("My Game".to_owned());
 
     // Run the application
-    match atlas::event::run(config) {
+    match atlas::event::run(config, MyGame) {
       Ok(_) => exit(0),
       Err(e) => panic!("{:?}", e),
     }

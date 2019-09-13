@@ -2,8 +2,7 @@ use atlas::{config::Config, event::Game, Result};
 use log::{error, info};
 use std::process::exit;
 
-#[allow(dead_code)]
-struct Sandbox {}
+struct Sandbox;
 
 impl Game for Sandbox {
 	fn draw(&mut self) -> Result<()> {
@@ -34,7 +33,7 @@ fn main() {
 
 	let config = Config::new().set_title("Sandbox".to_owned());
 
-	match atlas::event::run(config) {
+	match atlas::event::run(config, Sandbox) {
 		Ok(_) => exit(0),
 		Err(e) => {
 			error!("{:?}", e);
