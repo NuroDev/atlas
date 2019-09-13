@@ -9,7 +9,7 @@ readme = "README.md"
 repository = "https://github.com/nurodev/atlas"
 documentation = "https://docs.atlas.nuro.sh/"
 homepage = "https://atlas.nuro.sh/"
-exclude = ["example", "target", "book"]
+exclude = ["example", "target"]
 keywords = ["3D", "game", "engine", "sdk", "atlas"]
 
 [badges]
