@@ -6,8 +6,6 @@ authors = ["N U R O ™ <me@nuro.sh>"]
 git-repository-url = "https://github.com/nurodev/atlas"
 additional-css = ["./custom.css"]
 
-[output.linkcheck]
-
 [build]
-build-dir = "../target/book"
+build-dir = "./public"
 create-missing = true
