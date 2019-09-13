@@ -22,12 +22,12 @@ cd atlas/
 
 Build:
 ```shell
-cargo build
+cargo build --features [PLATFORM_BACKEND]
 ```
 
 Run:
 ```shell
-cargo run --example sandbox
+cargo run --example sandbox --features [PLATFORM_BACKEND]
 ```
 
 Docs:
