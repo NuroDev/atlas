@@ -1,4 +1,4 @@
-use atlas::{config::Config, error::Result, event::Game};
+use atlas::{config::Config, event::Game, Result};
 use log::{error, info};
 use std::process::exit;
 

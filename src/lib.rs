@@ -31,7 +31,7 @@ atlas = { git = "https://github.com/nurodev/atlas" }
 ## Example:
 ```rust
 use atlas::config::Config;
-use atlas::error::Result;
+use atlas::Result;
 use atlas::event::Game;
 use std::process::exit;
 
@@ -86,6 +86,9 @@ feel free to submit a PR.
 	html_logo_url = "https://raw.githubusercontent.com/NuroDev/atlas/master/assets/Logo.png"
 )]
 #![warn(dead_code)]
+
+/// TODO: Documentation
+pub type Result<T = ()> = std::result::Result<T, error::AtlasError>;
 
 // Core Modules
 pub mod config;

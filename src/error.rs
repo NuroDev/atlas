@@ -45,6 +45,3 @@ quick_error! {
 		}
 	}
 }
-
-/// TODO: Documentation
-pub type Result<T=()> = std::result::Result<T, AtlasError>;

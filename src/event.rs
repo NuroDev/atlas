@@ -1,4 +1,4 @@
-use crate::{config::Config, error::Result};
+use crate::{config::Config, Result};
 use log::info;
 use winit::{ControlFlow, Event, EventsLoop, WindowBuilder, WindowEvent};
 
