@@ -33,7 +33,7 @@ gfx-hal = "0.2.1"
 log = "0.4.6"
 nalgebra = "0.18.0"
 quick-error = "1.2.2"
-winit = "0.19.2"
+winit = "0.19.3"
 
 [target.'cfg(windows)'.dependencies.gfx-backend-dx11]
 version = "0.3.0"
