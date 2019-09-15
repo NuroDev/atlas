@@ -1,4 +1,4 @@
-use crate::{config::Config, Result};
+use crate::{config::Config, graphics::Instance, Result};
 use log::info;
 use winit::{ControlFlow, Event, EventsLoop, WindowBuilder, WindowEvent};
 
@@ -19,14 +19,18 @@ pub fn run <G> (config: Config, _game: G) -> Result
 where
 	G: Game + 'static,
 {
+	info!("Starting event loop...");
+
 	let mut event_loop = EventsLoop::new();
-	let _window = WindowBuilder::new()
+	let window = WindowBuilder::new()
 		.with_title(&config.title)
 		.with_dimensions((config.resolution.width, config.resolution.height).into())
 		.build(&event_loop)
 		.expect("Failed to unwrap window builder");
 
-	info!("Starting event loop...");
+	let instance = Instance::create(&config.title, 1);
+
+	let surface = instance.create_surface(&window);
 
 	event_loop.run_forever(|event| match event {
 		Event::WindowEvent {
