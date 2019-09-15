@@ -12,9 +12,7 @@ pub enum WindowMode {
 }
 
 impl Default for WindowMode {
-	fn default() -> WindowMode {
-		WindowMode::Windowed
-	}
+	fn default() -> WindowMode { WindowMode::Windowed }
 }
 
 /// TODO: Documentation
