@@ -21,9 +21,9 @@ path = "./src/lib.rs"
 
 [features]
 default = []
-metal = ["gfx-backend-metal"]
 dx11 = ["gfx-backend-dx11"]
 dx12 = ["gfx-backend-dx12"]
+metal = ["gfx-backend-metal"]
 vulkan = ["gfx-backend-vulkan"]
 
 [dependencies]

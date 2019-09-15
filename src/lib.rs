@@ -83,7 +83,7 @@ feel free to submit a PR.
 #![warn(dead_code)]
 
 /// TODO: Documentation
-pub type Result<T = ()> = std::result::Result<T, error::AtlasError>;
+pub type Result<T=()> = std::result::Result<T, error::AtlasError>;
 
 // Core Modules
 pub mod config;
