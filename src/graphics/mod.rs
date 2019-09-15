@@ -1,13 +1,14 @@
+// TODO: Removed extern crate (Rust 2018)
+extern crate gfx_hal as hal;
+
 #[cfg(feature = "dx11")]
-extern crate gfx_backend_dx11 as backend;
+pub use gfx_backend_dx11::Instance;
 
 #[cfg(feature = "dx12")]
-extern crate gfx_backend_dx12 as backend;
+pub use gfx_backend_dx12::Instance;
 
 #[cfg(feature = "metal")]
-extern crate gfx_backend_metal as backend;
+pub use gfx_backend_metal::Instance;
 
 #[cfg(feature = "vulkan")]
-extern crate gfx_backend_vulkan as backend;
-
-extern crate gfx_hal as hal;
+pub use gfx_backend_vulkan::Instance;
