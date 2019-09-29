@@ -9,9 +9,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install
-      run: cargo install mdbook
+      run: cargo install mdbook --verbose
     - name: Build
-      run: cd book && mdbook build
+      run: cd book && ls && pwd && mdbook build
     - name: Deploy
       uses: actions/zeit-now@1.0.0
       env:
