@@ -1,0 +1,7 @@
+{
+    "version": 2,
+    "name": "docs",
+    "public": true,
+    "scope": "atlasengine",
+    "alias": "docs.atlasengine.dev"
+}
