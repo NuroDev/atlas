@@ -20,30 +20,18 @@ git clone https://github.com/nurodev/atlas.git
 cd atlas/
 ```
 
-Build:
-```shell
-cargo build --features [PLATFORM_BACKEND]
-```
-
 Run:
 ```shell
-cargo run --example sandbox --features [PLATFORM_BACKEND]
-```
-
-Docs:
-```shell
-cargo doc --no-deps --open
+cargo build --features [dx11|dx12|metal|vulkan]
 ```
 
 ## Inspiration:
 
 A lot of the architecture of Atlas and the way it functions was inspired by other existing Rust based game engines. These include:
  - [Amethyst](https://amethyst.rs/)
- - [Piston](https://piston.rs/)
  - [Kiss3D](http://kiss3d.org/)
- - [Veloren](https://gitlab.com/veloren/veloren)
  - [GGEZ](https://ggez.rs/)
- - [Coffee](https://github.com/hecrj/coffee) 
+ - [Tetra](https://github.com/17cupsofcoffee/tetra) 
  
 A **HUGE** thank you to all the contributors to all of those projects for their work that helped guide me in my creation of Atlas ❤️
 
