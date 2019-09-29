@@ -14,9 +14,3 @@ pub use gfx_backend_metal::Instance;
 pub use gfx_backend_vulkan::Instance;
 
 #[cfg(not(any(
-    feature = "dx11",
-    feature = "dx12",
-    feature = "metal",
-    feature = "vulkan"
-)))]
-pub use gfx_backend_empty::Instance;
