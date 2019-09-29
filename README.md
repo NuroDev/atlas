@@ -4,10 +4,10 @@
     <img alt='Atlas' src='./book/src/assets/Banner.png?sanitize=true' />
   </a>
 
-  [![Travis](https://img.shields.io/travis/NuroDev/Atlas/master.svg?style=for-the-badge)](https://travis-ci.org/NuroDev/Atlas) 
+  <!-- [![Travis](https://img.shields.io/travis/NuroDev/Atlas/master.svg?style=for-the-badge)](https://travis-ci.org/NuroDev/Atlas) 
   [![License](https://img.shields.io/badge/-mit-blue.svg?longCache=true&style=for-the-badge)](http://www.gnu.org/licenses/) 
   [![Gitmoji](https://img.shields.io/badge/-%20%F0%9F%98%9C-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/) 
-  [![Figma](https://img.shields.io/badge/-2C2C2C.svg?logo=figma&logoColor=white&longCache=true&style=for-the-badge)](https://www.figma.com/file/a5yG3zVdkGc1ervX4Gl3Lx/Atlas) 
+  [![Figma](https://img.shields.io/badge/-2C2C2C.svg?logo=figma&logoColor=white&longCache=true&style=for-the-badge)](https://www.figma.com/file/a5yG3zVdkGc1ervX4Gl3Lx/Atlas)  -->
 
   <br />
 </div>
