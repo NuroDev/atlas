@@ -4,15 +4,14 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
 
     steps:
     - uses: actions/checkout@v1
     - name: Install
       run: cargo install mdbook --verbose
-    - run: cd book
     - name: Build
-      run: mdbook build
+      run: cd book && mdbook build
     - name: Deploy
       uses: actions/zeit-now@1.0.0
       env:
