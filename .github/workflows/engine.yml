@@ -3,16 +3,60 @@ name: Build | Engine
 on: [push]
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
+  windows:
+    name: Windows
+    runs-on: windows-latest
     strategy:
       matrix:
-        os: [windows-latest, macOS-latest, ubuntu-latest]
-        rust: [stable, nightly]
-
+        backend:
+          - dx11
+          - dx12
+        toolchain:
+          - stable
+          - nightly
     steps:
     - uses: actions/checkout@v1
-    - name: Toolchain
-      run: rustup default ${{ matrix.rust }}
-    - name: Build
-      run: cargo build --verbose
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.toolchain }}
+        override: true
+    - uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --verbose --release --features ${{ matrix.backend }}
+  mac:
+    name: macOS
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        toolchain:
+          - stable
+          - nightly
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.toolchain }}
+        override: true
+    - uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --verbose --release --features metal
+  linux:
+    name: Linux
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        toolchain:
+          - stable
+          - nightly
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.toolchain }}
+        override: true
+    - uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --verbose --release --features vulkan
