@@ -1,0 +1,18 @@
+name: Build | Engine
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macOS-latest, ubuntu-latest]
+        rust: [stable, nightly]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Toolchain
+      run: rustup default ${{ matrix.rust }}
+    - name: Build
+      run: cargo build --verbose
