@@ -1,5 +1,6 @@
 [book]
 title = "atlas"
+src = "./src"
 authors = ["N U R O ™ <me@nuro.sh>"]
 
 [output.html]
