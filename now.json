@@ -1,8 +1,7 @@
 {
     "version": 2,
-    "name": "root",
+    "name": "atlas",
     "alias": "atlasengine.dev",
-    "scope": "atlasengine",
     "public": true,
     "github": {
         "autoAlias": true

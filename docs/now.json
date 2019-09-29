@@ -1,8 +1,7 @@
 {
     "version": 2,
-    "name": "docs",
+    "name": "atlas",
     "public": true,
-    "scope": "atlasengine",
     "alias": "docs.atlasengine.dev",
     "routes": [
         {

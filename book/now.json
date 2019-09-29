@@ -1,7 +1,6 @@
 {
     "version": 2,
-    "name": "book",
+    "name": "atlas",
     "public": true,
-    "scope": "atlasengine",
     "alias": "book.atlasengine.dev"
 }
