@@ -1,4 +1,4 @@
-name: Book
+name: Build | Book
 
 on: [push]
 
@@ -11,7 +11,7 @@ jobs:
     - name: Install
       run: cargo install mdbook --verbose
     - name: Build
-      run: cd book && ls && pwd && mdbook build
+      run: cd book && mdbook build
     - name: Deploy
       uses: actions/zeit-now@1.0.0
       env:
