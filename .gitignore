@@ -6,6 +6,9 @@ Cargo.lock
 
 public/
 
+docs/*
+!docs/now.json
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
