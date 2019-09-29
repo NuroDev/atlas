@@ -12,5 +12,3 @@ pub use gfx_backend_metal::Instance;
 
 #[cfg(feature = "vulkan")]
 pub use gfx_backend_vulkan::Instance;
-
-#[cfg(not(any(
