@@ -20,7 +20,7 @@ name = "atlas"
 path = "./src/lib.rs"
 
 [features]
-default = []
+default = ["gfx-backend-empty"]
 dx11 = ["gfx-backend-dx11"]
 dx12 = ["gfx-backend-dx12"]
 metal = ["gfx-backend-metal"]
@@ -42,6 +42,11 @@ features = ["winit"]
 
 [target.'cfg(windows)'.dependencies.gfx-backend-dx12]
 version = "0.3.3"
+optional = true
+features = ["winit"]
+
+[dependencies.gfx-backend-empty]
+version = "0.3.1"
 optional = true
 features = ["winit"]
 
