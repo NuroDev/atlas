@@ -12,3 +12,11 @@ pub use gfx_backend_metal::Instance;
 
 #[cfg(feature = "vulkan")]
 pub use gfx_backend_vulkan::Instance;
+
+#[cfg(not(any(
+    feature = "dx11",
+    feature = "dx12",
+    feature = "metal",
+    feature = "vulkan"
+)))]
+compile_error!("No backend provided. Use `--feature [dx11|dx12|metal|vulkan]` to select your given backend");
