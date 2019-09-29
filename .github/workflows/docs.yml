@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build
-      run: cargo doc --no-deps --features vulkan
+      run: cargo doc --verbose --no-deps --features vulkan
     - name: Move
-      run: mv -v target/doc/* docs/ && cd docs/
+      run: mv -v target/doc/* docs/
     - name: Deploy
-      run: npx now --prod --token=${{ secrets.ZEIT_TOKEN }}
+      run: cd docs/ && npx now --prod --token=${{ secrets.ZEIT_TOKEN }}
