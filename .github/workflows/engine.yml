@@ -7,12 +7,25 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, macOS-latest, ubuntu-latest]
-        rust: [stable, nightly]
-
+        backend:
+          - dx11
+          - dx12
+          - metal
+          - vulkan
+        os:
+          - windows-latest
+          - macOS-latest
+          - ubuntu-latest
+        toolchain:
+          - stable
+          - nightly
     steps:
     - uses: actions/checkout@v1
-    - name: Toolchain
-      run: rustup default ${{ matrix.rust }}
-    - name: Build
-      run: cargo build --verbose
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.toolchain }}
+        override: true
+    - uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --verbose --release --features ${{ matrix.backend }}
