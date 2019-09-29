@@ -15,4 +15,4 @@ jobs:
     - name: Deploy
       uses: actions/zeit-now@1.0.0
       env:
-      	super_secret: ${{ secrets.ZEIT_TOKEN }}
+        ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
