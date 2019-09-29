@@ -1,17 +1,25 @@
 {
     "version": 2,
-    "name": "atlas",
-    "alias": "atlas.nuro.sh",
+    "name": "root",
+    "alias": "atlasengine.dev",
+    "scope": "atlasengine",
     "public": true,
     "github": {
         "autoAlias": true
     },
     "routes": [
         {
+            "src": "/book",
+            "status": 301,
+            "headers": {
+                "Location": "https://book.atlasengine.dev"
+            }
+        },
+        {
             "src": "/docs",
             "status": 301,
             "headers": {
-                "Location": "https://docs.atlas.nuro.sh"
+                "Location": "https://docs.atlasengine.dev"
             }
         },
         {

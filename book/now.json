@@ -1,6 +1,7 @@
 {
     "version": 2,
-    "name": "atlas",
-    "alias": "book.atlas.nuro.sh",
-    "public": true
+    "name": "book",
+    "public": true,
+    "scope": "atlasengine",
+    "alias": "book.atlasengine.dev"
 }
