@@ -10,10 +10,9 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install
       run: cargo install mdbook --verbose
+    - run: cd book
     - name: Build
-      run: |
-        cd book
-        mdbook build
+      run: mdbook build
     - name: Deploy
       uses: actions/zeit-now@1.0.0
       env:
