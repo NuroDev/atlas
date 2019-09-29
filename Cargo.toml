@@ -1,6 +1,6 @@
 [package]
 name = "atlas"
-description = "🌈 3D game engine built using Rust"
+description = "🌈 Proof-of-concept game engine built using Rust"
 version = "1.1.1"
 authors = ["N U R O ™ <me@nuro.sh>"]
 license = "MIT"
