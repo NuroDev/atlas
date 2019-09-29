@@ -1,5 +1,7 @@
 [book]
 title = "atlas"
+language = "en"
+multilingual = false
 src = "./src"
 authors = ["N U R O ™ <me@nuro.sh>"]
 
