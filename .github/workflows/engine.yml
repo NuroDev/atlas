@@ -1,4 +1,4 @@
-name: Build | Engine
+name: Engine
 
 on: [push]
 
