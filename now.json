@@ -19,7 +19,7 @@
             "src": "/docs",
             "status": 301,
             "headers": {
-                "Location": "https://docs.atlasengine.dev/atlas"
+                "Location": "https://docs.atlasengine.dev"
             }
         },
         {
