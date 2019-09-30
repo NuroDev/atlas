@@ -23,7 +23,7 @@ cd atlas/
 
 Run:
 ```shell
-cargo build --features [dx11|dx12|metal|vulkan]
+cargo run --features [dx11|dx12|metal|vulkan]
 ```
 
 ## Inspiration:
