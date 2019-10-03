@@ -2,14 +2,5 @@
     "version": 2,
     "name": "atlas",
     "public": true,
-    "alias": "docs.atlasengine.dev",
-    "routes": [
-        {
-            "src": "/",
-            "status": 301,
-            "headers": {
-                "Location": "./atlas"
-            }
-        }
-    ]
+    "alias": "docs.atlasengine.dev"
 }
