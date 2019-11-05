@@ -15,15 +15,33 @@ jobs:
           - stable
           - nightly
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions-rs/toolchain@v1
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Toolchain
+      uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ matrix.toolchain }}
         override: true
-    - uses: actions-rs/cargo@v1
+    - name: Build
+      uses: actions-rs/cargo@v1
       with:
         command: build
         args: --verbose --release --features ${{ matrix.backend }}
+    - name: Cache | Registry
+      uses: actions/cache@v1
+      with:
+        path: ~/.cargo/registry
+        key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+    - name: Cache | Index
+      uses: actions/cache@v1
+      with:
+        path: ~/.cargo/git
+        key: ${{ runner.os }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+    - name: Cache | Build
+      uses: actions/cache@v1
+      with:
+        path: target
+        key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
   mac:
     name: macOS
     runs-on: macOS-latest
@@ -33,15 +51,33 @@ jobs:
           - stable
           - nightly
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions-rs/toolchain@v1
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Toolchain
+      uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ matrix.toolchain }}
         override: true
-    - uses: actions-rs/cargo@v1
+    - name: Build
+      uses: actions-rs/cargo@v1
       with:
         command: build
         args: --verbose --release --features metal
+    - name: Cache | Registry
+      uses: actions/cache@v1
+      with:
+        path: ~/.cargo/registry
+        key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+    - name: Cache | Index
+      uses: actions/cache@v1
+      with:
+        path: ~/.cargo/git
+        key: ${{ runner.os }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+    - name: Cache | Build
+      uses: actions/cache@v1
+      with:
+        path: target
+        key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
   linux:
     name: Linux
     runs-on: ubuntu-latest
@@ -51,12 +87,30 @@ jobs:
           - stable
           - nightly
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions-rs/toolchain@v1
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Toolchain
+      uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ matrix.toolchain }}
         override: true
-    - uses: actions-rs/cargo@v1
+    - name: Build
+      uses: actions-rs/cargo@v1
       with:
         command: build
         args: --verbose --release --features vulkan
+    - name: Cache | Registry
+      uses: actions/cache@v1
+      with:
+        path: ~/.cargo/registry
+        key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+    - name: Cache | Index
+      uses: actions/cache@v1
+      with:
+        path: ~/.cargo/git
+        key: ${{ runner.os }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+    - name: Cache | Build
+      uses: actions/cache@v1
+      with:
+        path: target
+        key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
