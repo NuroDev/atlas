@@ -17,11 +17,11 @@ jobs:
         mdbook-version: '0.3.5'
 
     - name: Build
-      run: pwd && ls && mdbook build ./book
+      run: mdbook build ./book
 
     - name: Deploy
       uses: amondnet/now-deployment@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         zeit-token: ${{ secrets.ZEIT_TOKEN }}
-        now-args: '--prod ./book'
+        now-args: '--prod ./book/book'
