@@ -5,6 +5,7 @@ Cargo.lock
 **/*.rs.bk
 
 public/
+book/book/*
 
 docs/*
 !docs/now.json
