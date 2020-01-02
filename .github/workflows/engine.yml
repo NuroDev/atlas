@@ -13,20 +13,25 @@ jobs:
           - dx12
         toolchain:
           - stable
+          - beta
           - nightly
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+
     - name: Toolchain
       uses: actions-rs/toolchain@v1
       with:
+        profile: minimal
         toolchain: ${{ matrix.toolchain }}
         override: true
+
     - name: Build
       uses: actions-rs/cargo@v1
       with:
         command: build
         args: --verbose --release --features ${{ matrix.backend }}
+
   mac:
     name: macOS
     runs-on: macOS-latest
@@ -34,20 +39,25 @@ jobs:
       matrix:
         toolchain:
           - stable
+          - beta
           - nightly
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+
     - name: Toolchain
       uses: actions-rs/toolchain@v1
       with:
+        profile: minimal
         toolchain: ${{ matrix.toolchain }}
         override: true
+
     - name: Build
       uses: actions-rs/cargo@v1
       with:
         command: build
         args: --verbose --release --features metal
+
   linux:
     name: Linux
     runs-on: ubuntu-latest
@@ -55,15 +65,19 @@ jobs:
       matrix:
         toolchain:
           - stable
+          - beta
           - nightly
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+
     - name: Toolchain
       uses: actions-rs/toolchain@v1
       with:
+        profile: minimal
         toolchain: ${{ matrix.toolchain }}
         override: true
+    
     - name: Build
       uses: actions-rs/cargo@v1
       with:
