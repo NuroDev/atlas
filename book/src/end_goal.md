@@ -1,2 +1,0 @@
-# 🎯 End Goal?
-Hello World

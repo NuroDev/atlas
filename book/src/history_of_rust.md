@@ -1,2 +1,0 @@
-# ⏳ History
-Hello World

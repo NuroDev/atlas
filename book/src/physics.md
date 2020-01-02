@@ -1,2 +1,0 @@
-# 🎢 Physics
-Hello World

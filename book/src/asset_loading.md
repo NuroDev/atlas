@@ -1,2 +1,0 @@
-# 🏭 Asset Loading
-Hello World

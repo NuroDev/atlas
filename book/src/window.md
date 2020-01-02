@@ -1,2 +1,0 @@
-# 🏠 Window
-Hello World

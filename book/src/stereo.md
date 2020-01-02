@@ -1,2 +1,0 @@
-# 🔊 Stereo
-Hello World

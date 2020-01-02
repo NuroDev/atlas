@@ -1,2 +1,0 @@
-# 🏖 Sandbox
-Hello World

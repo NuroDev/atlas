@@ -1,2 +1,0 @@
-# 🌐 Objects
-Hello World

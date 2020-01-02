@@ -1,2 +1,0 @@
-# 📑 Logging
-Hello World

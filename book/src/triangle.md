@@ -1,2 +1,0 @@
-# 🔼 Triangle
-Hello World

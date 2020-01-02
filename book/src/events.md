@@ -1,2 +1,0 @@
-# 🔫 Events
-Hello World

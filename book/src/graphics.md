@@ -1,2 +1,0 @@
-# 🖼 Graphics
-Hello World
