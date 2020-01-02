@@ -2,9 +2,9 @@ use atlas::{config::Config, event::Game, Result};
 use log::{error, info};
 use std::process::exit;
 
-struct Sandbox;
+struct HelloWorld;
 
-impl Game for Sandbox {
+impl Game for HelloWorld {
 	fn draw(&mut self) -> Result<()> {
 		// Draw a new frame
 		Ok(())
@@ -29,11 +29,11 @@ impl Game for Sandbox {
 fn main() {
 	env_logger::init();
 
-	info!("Initializing Sandbox...");
+	info!("Initializing Hello World...");
 
-	let config = Config::new().set_title("Sandbox".to_owned());
+	let config = Config::new().set_title("Hello World".to_owned());
 
-	match atlas::event::run(config, Sandbox) {
+	match atlas::event::run(config, HelloWorld) {
 		Ok(_) => exit(0),
 		Err(e) => {
 			error!("{:?}", e);
