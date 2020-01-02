@@ -15,10 +15,7 @@ pub trait Game {
 	fn update(&mut self) -> Result;
 }
 
-pub fn run <G> (config: Config, _game: G) -> Result
-where
-	G: Game + 'static,
-{
+pub fn run<G: Game+'static>(config: Config, _game: G) -> Result {
 	info!("Starting event loop...");
 
 	let mut event_loop = EventsLoop::new();

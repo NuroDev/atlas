@@ -23,25 +23,25 @@
 //! struct MyGame;
 //!
 //! impl Game for MyGame {
-//! 	fn draw(&mut self) -> Result<()> {
-//! 		// Draw a new frame
-//! 		Ok(())
-//! 	}
+//!     fn draw(&mut self) -> Result<()> {
+//!         // Draw a new frame
+//!         Ok(())
+//!     }
 //!
-//! 	fn exit(&mut self) -> Result<()> {
-//! 		// Cleanup before closing the application
-//! 		Ok(())
-//! 	}
+//!     fn exit(&mut self) -> Result<()> {
+//!         // Cleanup before closing the application
+//!         Ok(())
+//!     }
 //!
-//! 	fn load(&mut self) -> Result<()> {
-//! 		// Load the application & any assets
-//! 		Ok(())
-//! 	}
+//!     fn load(&mut self) -> Result<()> {
+//!         // Load the application & any assets
+//!         Ok(())
+//!     }
 //!
-//! 	fn update(&mut self) -> Result<()> {
-//! 		// Update every tick
-//! 		Ok(())
-//! 	}
+//!     fn update(&mut self) -> Result<()> {
+//!         // Update every tick
+//!         Ok(())
+//!     }
 //! }
 //!
 //! fn main() {

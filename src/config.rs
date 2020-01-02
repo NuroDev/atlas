@@ -77,7 +77,7 @@ impl Default for Config {
 impl Config {
 	/// Set the application icon
 	pub fn set_icon(mut self, icon: String) -> Self {
-		self.icon = icon.to_owned();
+		self.icon = icon;
 		self
 	}
 

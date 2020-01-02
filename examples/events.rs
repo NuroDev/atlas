@@ -21,8 +21,8 @@ impl Game for Events {
 	}
 
 	fn update(&mut self) -> Result<()> {
-        // Update every tick
-        info!("Updating...");
+		// Update every tick
+		info!("Updating...");
 
 		Ok(())
 	}
