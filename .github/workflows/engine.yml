@@ -3,17 +3,39 @@ name: 🚀 Engine
 on: [push]
 
 jobs:
-  windows:
-    name: Windows
-    runs-on: windows-latest
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os:
+          - windows-latest
+          - macos-latest
+          - ubuntu-latest
         backend:
           - dx11
           - dx12
+          - metal
+          - vulkan
         toolchain:
           - stable
+          - beta
           - nightly
+        exclude:
+          - os: windows-latest
+            backend:
+              - metal
+              - vulkan
+          - os: macos-latest
+            backend:
+              - dx11
+              - dx12
+              - vulkan
+          - os: ubuntu-latest
+            backend:
+              - dx11
+              - dx12
+              - metal
     steps:
     - name: Checkout
       uses: actions/checkout@v1
@@ -27,45 +49,3 @@ jobs:
       with:
         command: build
         args: --verbose --release --features ${{ matrix.backend }}
-  mac:
-    name: macOS
-    runs-on: macOS-latest
-    strategy:
-      matrix:
-        toolchain:
-          - stable
-          - nightly
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Toolchain
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: ${{ matrix.toolchain }}
-        override: true
-    - name: Build
-      uses: actions-rs/cargo@v1
-      with:
-        command: build
-        args: --verbose --release --features metal
-  linux:
-    name: Linux
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        toolchain:
-          - stable
-          - nightly
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Toolchain
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: ${{ matrix.toolchain }}
-        override: true
-    - name: Build
-      uses: actions-rs/cargo@v1
-      with:
-        command: build
-        args: --verbose --release --features vulkan
