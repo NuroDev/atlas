@@ -21,7 +21,7 @@ jobs:
       run: |
         pwd
         ls
-        mdbook build
+        mdbook build .
 
     - name: Deploy
       uses: amondnet/now-deployment@v1
