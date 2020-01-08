@@ -18,7 +18,10 @@ jobs:
 
     - name: Build
       working-directory: ./book
-      run: mdbook build
+      run: |
+        pwd
+        ls
+        mdbook build
 
     - name: Deploy
       uses: amondnet/now-deployment@v1
