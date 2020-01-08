@@ -1,0 +1,25 @@
+name: 🚀 Engine | Windows
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        backend: [dx11, dx12]
+        toolchain: [stable, beta, nightly]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.toolchain }}
+        override: true
+    - name: Build
+      uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --verbose --release --features ${{ matrix.backend }}

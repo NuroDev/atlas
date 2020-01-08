@@ -1,24 +1,14 @@
-name: 🚀 Engine
+name: 🚀 Engine | Linux
 
 on: [push]
 
 jobs:
   build:
     name: Build
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [windows-latest, macos-latest, ubuntu-latest]
         toolchain: [stable, beta, nightly]
-        include:
-          - os: windows-latest
-            backend:
-              - dx11
-              - dx12
-          - os: macos-latest
-            backend: metal
-          - os: ubuntu-latest
-            backend: vulkan
     steps:
     - name: Checkout
       uses: actions/checkout@v1
@@ -31,4 +21,4 @@ jobs:
       uses: actions-rs/cargo@v1
       with:
         command: build
-        args: --verbose --release --features ${{ matrix.backend }}
+        args: --verbose --release --features vulkan
