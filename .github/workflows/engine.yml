@@ -12,30 +12,21 @@ jobs:
           - windows-latest
           - macos-latest
           - ubuntu-latest
-        backend:
-          - dx11
-          - dx12
-          - metal
-          - vulkan
         toolchain:
           - stable
           - beta
           - nightly
-        exclude:
+        include:
           - os: windows-latest
             backend:
-              - metal
-              - vulkan
+              - dx11
+              - dx12
           - os: macos-latest
             backend:
-              - dx11
-              - dx12
-              - vulkan
+              - metal
           - os: ubuntu-latest
             backend:
-              - dx11
-              - dx12
-              - metal
+              - vulkan
     steps:
     - name: Checkout
       uses: actions/checkout@v1
