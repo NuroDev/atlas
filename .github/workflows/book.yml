@@ -6,6 +6,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./book
 
     steps:
     - name: Checkout
@@ -17,11 +19,13 @@ jobs:
         mdbook-version: '0.3.5'
 
     - name: Build
-      run: mdbook build ./book
+      working-directory: ${{ env.working-directory }}
+      run: mdbook build
 
     - name: Deploy
       uses: amondnet/now-deployment@v1
+      working-directory: ${{ env.working-directory }}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         zeit-token: ${{ secrets.ZEIT_TOKEN }}
-        now-args: '--prod ./book/book'
+        now-args: '--prod'
