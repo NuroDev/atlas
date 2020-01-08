@@ -22,7 +22,6 @@ jobs:
 
     - name: Deploy
       uses: amondnet/now-deployment@v1
-      working-directory: ./book
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         zeit-token: ${{ secrets.ZEIT_TOKEN }}
