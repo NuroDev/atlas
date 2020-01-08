@@ -11,3 +11,4 @@ additional-css = ["./custom.css"]
 
 [build]
 create-missing = true
+build-dir = "public/"
