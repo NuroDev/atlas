@@ -6,6 +6,7 @@ jobs:
   build:
     name: Build
     runs-on: windows-latest
+    fail-fast: false
     strategy:
       matrix:
         backend: [dx11, dx12]

@@ -6,6 +6,7 @@ jobs:
   build:
     name: Build
     runs-on: macos-latest
+    fail-fast: false
     strategy:
       matrix:
         toolchain: [stable, beta, nightly]
