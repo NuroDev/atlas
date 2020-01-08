@@ -6,8 +6,8 @@ jobs:
   build:
     name: Build
     runs-on: windows-latest
-    fail-fast: false
     strategy:
+      fail-fast: false
       matrix:
         backend: [dx11, dx12]
         toolchain: [stable, beta, nightly]

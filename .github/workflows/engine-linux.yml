@@ -6,8 +6,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    fail-fast: false
     strategy:
+      fail-fast: false
       matrix:
         toolchain: [stable, beta, nightly]
     steps:
