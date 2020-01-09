@@ -1,20 +1,14 @@
 # Summary
 
-- [Introduction](introduction/README.md)
-    - [Objectives](introduction/objectives.md)
-    - [Ethics](introduction/ethics.md)
-    - [Risk Assessment](introduction/risk_assessment.md)
-    - [Workflow](introduction/workflow/README.md)
-        - [Management](introduction/workflow/management.md)
-        - [Methodology](introduction/workflow/methodology.md)
-
+- [Introduction](introduction.md)
+- [Objectives](objectives.md)
+- [Workflow](workflow.md)
 - [Research](research/README.md)
     - [What Is Rust?](research/what_is_rust.md)
     - [History Of Rust](research/history_of_rust.md)
     - [Ecosystem](research/ecosystem.md)
     - [Community](research/community.md)
     - [C++ Vs Rust](research/cpp_vs_rust.md)
-
 - [Implementation](implementation/README.md)
     - [Requirements](implementation/requirements.md)
     - [Architecture](implementation/architecture.md)
@@ -31,12 +25,9 @@
         - [Hello World](implementation/examples/hello_world.md)
         - [Events](implementation/examples/events.md)
         - [Triangle](implementation/examples/triangle.md)
-
 - [Evalutation](evaluation/README.md)
-    - [Ethics](evaluation/ethics.md)
     - [Workflow](evaluation/workflow.md)
     - [Research](evaluation/research.md)
     - [Implementation](evaluation/implementation.md)
     - [Reflection](evaluation/reflection.md)
-
 - [Conslusion](conslusion.md)
