@@ -1,8 +1,10 @@
 # 🦀 What Is Rust?
-The official Wikipedia description for the Rust language is:
+Rust is a new low-level programming language that is focused on safety, primarily safe concurrency.
+The language is focused on being able to offer high performance but also offer safety in parallel with that performance.
+This means Rust is perfect for applications that require either maxiumum performance, like creating games, or mission-critical systems that require maximum safety.
 
-> Rust is a multi-paradigm system programming language focused on safety, especially safe concurrency. Rust is syntactically similar to C++, but is designed to provide better memory safety while maintaining high performance.
+## Safety
+One of Rust's big selling points that makes the language so much safer than other languages like C++ where you have to perform manual memory management, or C# where you rely on a garbage collector to manage your memory, Rust instead uses its ownership model to guarantee memory safety, along with thread safety for data parallelism work.
 
-Okay, yeah, that sums up Rust pretty well, but let's dive a little deeper into it. 
-
-**TODO: More in depth detail about Rust, what it is, how it works and some of the pros and cons.**
+## Performance
+Since Rust uses its ownership model for memory management, that means there is no garbage collector present. This dramatically improve performance as any application will not have to waste resources on checking if there is memory that is scheduled to be freed up.
