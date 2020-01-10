@@ -1,12 +1,8 @@
 # 📋 Objectives
-Throughout the development of this project, there are multiple core objectives that 
-are fundamental to this project and need to be fulfilled.
+Throughout the development of this project, there are multiple objectives that 
+are fundamental to this project's artifact creation. These objectives need to be as similar
+as possible so there are no discrepancies when benchmarking the two platforms.
 Those objectives are, in no particular order, as follows:
-
-# Artifact:
-When creating the two final artifacts, they will need to have feature sets as similar as possible
-so there are no discrepancies when benchmarking the two platforms.
-As such, the minimum feature set is as follows: 
 
  - Clean project structure
 
