@@ -6,9 +6,9 @@ I realized it's real power and capabilities. However, that power very much comes
 That cost comes in the form of maintenance and ease of use. Maintaining an extensive C++ codebase or trying to get into using
 C++ from any experience point is a challenge. For a language as widely used as C++, it should not be so cumbersome.
 
-After spending my sandwich placement year out working in the industry, I had begun to use and enjoy the use of a new low-level 
-programming language called Rust. This new language has only been around since 2015, but since then it has exploded in popularity
-amongst developers. When Stack Overflow created its 2019 annual survey to show statistics from the past year, Rust was voted as the most loved language by developers.
+After spending my sandwich placement year out working in the industry, I had begun to use and enjoy the use of a new low-level programming language called Rust.
+This new language has only been around since 2015, but since then it has exploded in popularity amongst developers.
+When Stack Overflow created its 2019 annual survey to show statistics from the past year, Rust was voted as the most loved language by developers.
 
 <figure>
 	<img src='./assets/stack_overflow.png' alt='Most Loved, Dreaded, and Wanted'>
