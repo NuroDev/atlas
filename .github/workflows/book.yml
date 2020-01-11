@@ -24,5 +24,8 @@ jobs:
         mdbook build .
 
     - name: Deploy
-      working-directory: ./book
-      run: npx now --token=${{ secrets.ZEIT_TOKEN }} --prod
+      uses: amondnet/now-deployment@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        zeit-token: ${{ secrets.ZEIT_TOKEN }}
+        now-args: '--prod'
