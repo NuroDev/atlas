@@ -19,16 +19,16 @@ impl Default for WindowMode {
 #[derive(Clone, Debug)]
 pub struct Resolution {
 	/// TODO: Documentation
-	pub width: u32,
+	pub width: f64,
 	/// TODO: Documentation
-	pub height: u32,
+	pub height: f64,
 }
 
 impl Default for Resolution {
 	fn default() -> Resolution {
 		Resolution {
-			width: 1024,
-			height: 768,
+			width: 1024f64,
+			height: 768f64,
 		}
 	}
 }
@@ -88,7 +88,7 @@ impl Config {
 	}
 
 	/// Set the window resolution (width/height)
-	pub fn set_resolution(mut self, width: u32, height: u32) -> Self {
+	pub fn set_resolution(mut self, width: f64, height: f64) -> Self {
 		self.resolution = Resolution {
 			width,
 			height,

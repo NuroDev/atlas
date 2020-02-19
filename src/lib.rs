@@ -17,7 +17,7 @@
 //!
 //! ## Example:
 //! ```rust
-//! use atlas::{config::Config, event::Game, Result};
+//! use atlas::{config::Config, graphics::Game, Result};
 //! use std::process::exit;
 //!
 //! struct MyGame;
@@ -65,10 +65,17 @@
 pub type Result<T=()> = std::result::Result<T, error::AtlasError>;
 
 // Core Modules
-pub mod config;
-pub mod error;
-pub mod event;
-pub mod graphics;
+mod config;
+mod error;
+mod event;
+mod graphics;
 
-// Export Modules
+// Module Exports
+pub use config::Config;
+pub use error::AtlasError as Error;
+pub use event::AtlasEvent as Event;
+pub use graphics::Game;
+
+// Crate Exports
+pub extern crate imgui as ui;
 pub extern crate nalgebra as math;

@@ -1,24 +1,23 @@
-// TODO: Removed extern crate (Rust 2018)
-// extern crate gfx_hal as hal;
+use crate::Result;
+use imgui::Ui;
 
-#[cfg(feature = "dx11")]
-pub use gfx_backend_dx11::Instance;
+/// The interface between the engine and your game.
+/// Implement it, and pass your struct to `Window::main_loop`.
+pub trait Game {
+	/// Called every frame to draw/render content
+	fn draw(&mut self) -> Result;
+	/// Called on window close button click
+	fn exit(&mut self) -> Result;
+	/// Called at launch to initialize & load assets
+	fn load(&mut self) -> Result;
+	/// Draw custom UI elements using imgui
+	fn ui(&mut self, ui: &mut Ui) -> Result;
+	/// Called on every update tick event
+	fn update(&mut self) -> Result;
+}
 
-#[cfg(feature = "dx12")]
-pub use gfx_backend_dx12::Instance;
+mod renderer;
+mod types;
 
-#[cfg(feature = "metal")]
-pub use gfx_backend_metal::Instance;
-
-#[cfg(feature = "vulkan")]
-pub use gfx_backend_vulkan::Instance;
-
-#[cfg(not(any(
-	feature = "dx11",
-	feature = "dx12",
-	feature = "metal",
-	feature = "vulkan"
-)))]
-compile_error!(
-	"No backend provided. Use `--feature [dx11|dx12|metal|vulkan]` to select your given backend"
-);
+pub use renderer::AtlasRenderer as Renderer;
+pub use types::*;
