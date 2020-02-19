@@ -29,16 +29,6 @@ Run:
 cargo run --features [dx11|dx12|metal|vulkan]
 ```
 
-## Inspiration:
-
-A lot of the architecture of Atlas and the way it functions was inspired by other existing Rust based game engines. These include:
- - [Amethyst](https://amethyst.rs/)
- - [Kiss3D](http://kiss3d.org/)
- - [GGEZ](https://ggez.rs/)
- - [Tetra](https://github.com/17cupsofcoffee/tetra) 
- 
-A **HUGE** thank you to all the contributors to all of those projects for their work that helped guide me in my creation of Atlas ❤️
-
 ## License
 
 MIT © [Ben Dixon](https://github.com/NuroDev/atlas/blob/master/LICENSE)
