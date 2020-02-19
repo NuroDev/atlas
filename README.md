@@ -1,7 +1,7 @@
 <div align='center'>
 
   <a href='https://github.com/nurodev/atlas/releases'>
-    <img alt='Atlas' src='./book/src/assets/Banner.png?sanitize=true' />
+    <img alt='Atlas' src='./assets/Banner.png?sanitize=true' />
   </a>
 
   [![Build-Windows](https://img.shields.io/github/workflow/status/nurodev/atlas/%F0%9F%9A%80%20Engine%20(Windows)?label=%20&logo=windows&logoColor=white&style=for-the-badge)](https://github.com/NuroDev/atlas/actions?query=workflow%3A%22%F0%9F%9A%80+Engine+%28Windows%29%22) 
