@@ -17,7 +17,7 @@ fn main() {
 
 	info!("Initializing Hello World...");
 
-	let config = Config::new().set_title("Hello World".to_owned());
+	let config = Config::new().title("Hello World".to_owned());
 	let mut event: Event = Event::new(config, Box::new(HelloWorld));
 
 	match event.run() {

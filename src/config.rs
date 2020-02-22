@@ -76,19 +76,19 @@ impl Default for Config {
 
 impl Config {
 	/// Set the application icon
-	pub fn set_icon(mut self, icon: String) -> Self {
+	pub fn icon(mut self, icon: String) -> Self {
 		self.icon = icon;
 		self
 	}
 
 	/// Set whether the window is resizable
-	pub fn set_resizable(mut self, resizable: bool) -> Self {
+	pub fn resizable(mut self, resizable: bool) -> Self {
 		self.resizable = resizable;
 		self
 	}
 
 	/// Set the window resolution (width/height)
-	pub fn set_resolution(mut self, width: f64, height: f64) -> Self {
+	pub fn resolution(mut self, width: f64, height: f64) -> Self {
 		self.resolution = Resolution {
 			width,
 			height,
@@ -97,19 +97,19 @@ impl Config {
 	}
 
 	/// Set the window title
-	pub fn set_title(mut self, title: String) -> Self {
+	pub fn title(mut self, title: String) -> Self {
 		self.title = title;
 		self
 	}
 
 	/// Set whether to use V-sync or not
-	pub fn set_vsync(mut self, vsync: bool) -> Self {
+	pub fn vsync(mut self, vsync: bool) -> Self {
 		self.vsync = vsync;
 		self
 	}
 
 	/// Set the window mode
-	pub fn set_window_mode(mut self, window_mode: WindowMode) -> Self {
+	pub fn window_mode(mut self, window_mode: WindowMode) -> Self {
 		self.window_mode = window_mode;
 		self
 	}

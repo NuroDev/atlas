@@ -38,7 +38,9 @@ fn main() {
 
 	info!("Initializing Widgets...");
 
-	let config = Config::new().set_title("Widgets".to_string());
+	let config = Config::new()
+		.resolution(RESOLUTION.0, RESOLUTION.1)
+		.title("Widgets".to_string());
 	let mut event: Event = Event::new(config, Box::new(Widgets));
 
 	match event.run() {
