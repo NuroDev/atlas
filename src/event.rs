@@ -3,13 +3,15 @@ use crate::{
 	graphics::{Game, Renderer},
 	Result,
 };
+use derive_new::new;
 use gfx::Encoder;
 use glutin::{dpi::LogicalSize, Event, EventsLoop, WindowBuilder, WindowEvent};
-use imgui::Context;
+use imgui::{Context, DrawData, Io, Ui};
 use imgui_winit_support::{HiDpiMode, WinitPlatform};
 use log::info;
 use std::time::Instant;
 
+#[derive(new)]
 pub struct AtlasEvent {
 	/// TODO: Documentation
 	pub config: Config,
@@ -18,21 +20,14 @@ pub struct AtlasEvent {
 }
 
 impl AtlasEvent {
-	pub fn new(config: Config, game: Box<dyn Game>) -> AtlasEvent {
-		AtlasEvent {
-			config,
-			game,
-		}
-	}
-
 	pub fn run(&mut self) -> Result<()> {
 		info!("Starting event loop...");
 
 		// Create primary app event loop
-		let mut events_loop = EventsLoop::new();
+		let mut events_loop: EventsLoop = EventsLoop::new();
 
 		// Create app window builder
-		let builder = WindowBuilder::new()
+		let builder: WindowBuilder = WindowBuilder::new()
 			.with_title(&self.config.title)
 			.with_dimensions(LogicalSize::new(
 				self.config.resolution.width,
@@ -44,23 +39,23 @@ impl AtlasEvent {
 		context.set_ini_filename(None);
 
 		// Initialize window platform using winit
-		let mut platform = WinitPlatform::init(&mut context);
+		let mut platform: WinitPlatform = WinitPlatform::init(&mut context);
 
 		// Get current DPI factor from winit
-		let hidpi_factor = platform.hidpi_factor();
+		let hidpi_factor: f64 = platform.hidpi_factor();
 
-		// Set gloval font size based on dpi factor
+		// Set global font size based on dpi factor
 		context.io_mut().font_global_scale = (1.0 / hidpi_factor) as f32;
 
 		// Create renderer instance using previously created context, window builder
 		// and primary event loop
-		let mut renderer_sys = Renderer::new(&mut context, builder, &events_loop);
+		let mut renderer_sys: Renderer = Renderer::new(&mut context, builder, &events_loop);
 		platform.attach_window(context.io_mut(), renderer_sys.window(), HiDpiMode::Rounded);
 
 		let mut encoder: Encoder<_, _> = renderer_sys.factory.create_command_buffer().into();
 
-		let mut last_frame = Instant::now();
-		let mut is_running = true;
+		let mut last_frame: Instant = Instant::now();
+		let mut is_running: bool = true;
 
 		while is_running {
 			// Window event handler
@@ -79,12 +74,12 @@ impl AtlasEvent {
 				}
 			});
 
-			let io = context.io_mut();
+			let io: &mut Io = context.io_mut();
 			platform
 				.prepare_frame(io, renderer_sys.window())
 				.expect("Failed to start frame");
 			last_frame = io.update_delta_time(last_frame);
-			let mut ui = context.frame();
+			let mut ui: Ui = context.frame();
 
 			self.game.update()?;
 			self.game.draw()?;
@@ -94,7 +89,7 @@ impl AtlasEvent {
 				encoder.clear(main_color, [0.0, 0.0, 0.0, 0.0]);
 			}
 			platform.prepare_render(&ui, renderer_sys.window());
-			let draw_data = ui.render();
+			let draw_data: &DrawData = ui.render();
 			if let Some(main_color) = renderer_sys.main_color.as_mut() {
 				renderer_sys
 					.renderer
