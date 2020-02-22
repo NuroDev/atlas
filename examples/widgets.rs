@@ -1,30 +1,29 @@
 use atlas::{
-	ui::{im_str, Condition, Ui, Window},
+	ui::{im_str, Condition, Ui, Window, WindowFlags},
 	Config,
 	Event,
 	Game,
 	Result,
 };
-use log::{error, info};
-use std::process::exit;
 
+const RESOLUTION: (f64, f64) = (1280.0, 720.0);
 struct Widgets;
 
 impl Game for Widgets {
 	fn ui(&mut self, ui: &mut Ui) -> Result<()> {
-		Window::new(im_str!("Hello widgets"))
-			.size([400.0, 150.0], Condition::FirstUseEver)
+		let offset: f32 = 10.0;
+		let size: (f32, f32) = (150.0, 25.0);
+
+		Window::new(im_str!("Metrics"))
+			.size([size.0, size.1], Condition::Always)
+			.flags(WindowFlags::NO_MOVE)
+			.flags(WindowFlags::NO_DECORATION)
+			.position(
+				[(RESOLUTION.0 as f32) - size.0 - offset, offset],
+				Condition::Always,
+			)
 			.build(ui, || {
-				ui.text(im_str!("Hello world!"));
-				ui.separator();
-
 				ui.text(im_str!("FPS: {}", ui.io().framerate));
-
-				let mouse_pos = ui.io().mouse_pos;
-				ui.text(format!(
-					"Mouse Position: ({:.1},{:.1})",
-					mouse_pos[0], mouse_pos[1]
-				));
 			});
 
 		ui.show_demo_window(&mut true);
@@ -33,21 +32,12 @@ impl Game for Widgets {
 	}
 }
 
-fn main() {
+fn main() -> Result<()> {
 	env_logger::init();
 
-	info!("Initializing Widgets...");
-
 	let config = Config::new()
-		.resolution(RESOLUTION.0, RESOLUTION.1)
-		.title("Widgets".to_string());
-	let mut event: Event = Event::new(config, Box::new(Widgets));
+		.title("Widgets".to_string())
+		.resolution(RESOLUTION.0, RESOLUTION.1);
 
-	match event.run() {
-		Ok(_) => exit(0),
-		Err(e) => {
-			error!("{:?}", e);
-			exit(1);
-		},
-	}
+	Event::new(config, Box::new(Widgets)).run()
 }
