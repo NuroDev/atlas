@@ -5,15 +5,15 @@ use imgui::Ui;
 /// Implement it, and pass your struct to `Window::main_loop`.
 pub trait Game {
 	/// Called every frame to draw/render content
-	fn draw(&mut self) -> Result;
+	fn draw(&mut self) -> Result { Ok(()) }
 	/// Called on window close button click
-	fn exit(&mut self) -> Result;
+	fn exit(&mut self) -> Result { Ok(()) }
 	/// Called at launch to initialize & load assets
-	fn load(&mut self) -> Result;
+	fn load(&mut self) -> Result { Ok(()) }
 	/// Draw custom UI elements using imgui
-	fn ui(&mut self, ui: &mut Ui) -> Result;
+	fn ui(&mut self, _ui: &mut Ui) -> Result { Ok(()) }
 	/// Called on every update tick event
-	fn update(&mut self) -> Result;
+	fn update(&mut self) -> Result { Ok(()) }
 }
 
 mod renderer;

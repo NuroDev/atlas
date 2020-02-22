@@ -1,18 +1,10 @@
-use atlas::{ui::Ui, Config, Event, Game, Result};
+use atlas::{Config, Event, Game, Result};
 use log::{error, info};
 use std::process::exit;
 
 struct HelloWorld;
 
 impl Game for HelloWorld {
-	fn draw(&mut self) -> Result<()> { Ok(()) }
-
-	fn exit(&mut self) -> Result<()> { Ok(()) }
-
-	fn load(&mut self) -> Result<()> { Ok(()) }
-
-	fn ui(&mut self, _ui: &mut Ui) -> Result<()> { Ok(()) }
-
 	fn update(&mut self) -> Result<()> {
 		// Update every tick
 		info!("Tick");

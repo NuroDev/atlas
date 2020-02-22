@@ -11,14 +11,6 @@ use std::process::exit;
 struct Widgets;
 
 impl Game for Widgets {
-	fn draw(&mut self) -> Result<()> { Ok(()) }
-
-	fn exit(&mut self) -> Result<()> { Ok(()) }
-
-	fn load(&mut self) -> Result<()> { Ok(()) }
-
-	fn update(&mut self) -> Result<()> { Ok(()) }
-
 	fn ui(&mut self, ui: &mut Ui) -> Result<()> {
 		Window::new(im_str!("Hello widgets"))
 			.size([400.0, 150.0], Condition::FirstUseEver)
