@@ -10,49 +10,29 @@
 //! ## Installation:
 //! You can install Atlas by adding Atlas as a dependency to you `Cargo.toml`
 //! file.
-//! ```sh
+//! ```toml
 //! [dependencies]
 //! atlas = { git = "https://github.com/nurodev/atlas" }
 //! ```
 //!
 //! ## Example:
 //! ```rust
-//! use atlas::{config::Config, graphics::Game, Result};
-//! use std::process::exit;
+//! use atlas::{
+//! 	ui::{im_str, Condition, Ui, Window, WindowFlags},
+//! 	Config,
+//! 	Event,
+//! 	Game,
+//! 	Result,
+//! };
 //!
 //! struct MyGame;
 //!
-//! impl Game for MyGame {
-//!     fn draw(&mut self) -> Result<()> {
-//!         // Draw a new frame
-//!         Ok(())
-//!     }
+//! fn main() -> Result<()> {
+//! 	// Create a new application config
+//! 		let config = Config::new().title("My Game".to_string());
 //!
-//!     fn exit(&mut self) -> Result<()> {
-//!         // Cleanup before closing the application
-//!         Ok(())
-//!     }
-//!
-//!     fn load(&mut self) -> Result<()> {
-//!         // Load the application & any assets
-//!         Ok(())
-//!     }
-//!
-//!     fn update(&mut self) -> Result<()> {
-//!         // Update every tick
-//!         Ok(())
-//!     }
-//! }
-//!
-//! fn main() {
-//!     // Create a new application config
-//!     let config = Config::new().set_title("My Game".to_owned());
-//!
-//!     // Run the application
-//!     match atlas::event::run(config, MyGame) {
-//!       Ok(_) => exit(0),
-//!       Err(e) => panic!("{:?}", e),
-//!     }
+//! 	// Run the application
+//! 		Event::new(config, Box::new(Widgets)).run()
 //! }
 
 #![crate_name = "atlas"]
@@ -64,18 +44,15 @@
 /// TODO: Documentation
 pub type Result<T=()> = std::result::Result<T, error::AtlasError>;
 
-// Core Modules
 mod config;
 mod error;
 mod event;
 mod graphics;
 
-// Module Exports
 pub use config::Config;
 pub use error::AtlasError as Error;
 pub use event::AtlasEvent as Event;
 pub use graphics::Game;
 
-// Crate Exports
 pub extern crate imgui as ui;
 pub extern crate nalgebra as math;
