@@ -36,10 +36,6 @@ impl Default for Resolution {
 /// TODO: Documentation
 #[derive(Clone, Debug, new)]
 pub struct Config {
-	/// Path for the application icon
-	#[new(default)]
-	pub icon: String,
-
 	/// If the window resizable
 	#[new(default)]
 	pub resizable: bool,
@@ -64,7 +60,6 @@ pub struct Config {
 impl Default for Config {
 	fn default() -> Config {
 		Config {
-			icon: String::new(),
 			resizable: false,
 			resolution: Resolution::default(),
 			title: "Atlas".to_owned(),
@@ -75,12 +70,6 @@ impl Default for Config {
 }
 
 impl Config {
-	/// Set the application icon
-	pub fn icon(mut self, icon: String) -> Self {
-		self.icon = icon;
-		self
-	}
-
 	/// Set whether the window is resizable
 	pub fn resizable(mut self, resizable: bool) -> Self {
 		self.resizable = resizable;
