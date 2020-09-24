@@ -31,4 +31,4 @@ cargo run --features [dx11|dx12|metal|vulkan]
 
 ## License
 
-MIT © [Ben Dixon](https://github.com/NuroDev/atlas/blob/master/LICENSE)
+MIT © [Ben Dixon](https://github.com/NuroDev/atlas/blob/main/LICENSE)
